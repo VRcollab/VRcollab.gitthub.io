@@ -1,0 +1,14 @@
+{
+  "name": "vrcollab.github.io",
+  "version": "1.0.0",
+  "description": "VRcollab Webpage",
+  "main": "index.html",
+  "scripts": {
+    "test": "node_modules/.bin/http-server ."
+  },
+  "author": "VRcollab",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}
