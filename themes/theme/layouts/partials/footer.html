@@ -4,43 +4,22 @@
             <div class="col-md-3 mb-md-0 mb-3">
                 <h5 class="text-uppercase">Product</h5>
                 <ul class="list-unstyled">
+                    {{range $element := .Site.Params.footer.product}}
                     <li>
-                        <a href="#!">End User License Agreement</a>
+                        <a href="{{ $element.url }}">{{ $element.text }}</a>
                     </li>
-                    <li>
-                        <a href="#!">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#!">Pricing Plan</a>
-                    </li>
-                    <li>
-                        <a href="#!">VRcollab Lite – Virtual Reality BIM Coordination Software</a>
-                    </li>
+                    {{ end }}
                 </ul>
             </div>
             <div class="col-md-3 mb-md-0 mb-3">
                 <h5 class="text-uppercase">Learn</h5>
                 <ul class="list-unstyled">
-                    <li>
-                        <a href="#!">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#!">FAQ</a>
-                    </li>
-                    <li>
-                        <a href="#!">VRcollab Lite – Virtual Reality BIM Coordination Software</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">Blog</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#!">VRcollab STUDIO 2.0 - Are CAVEs replacing coordination rooms in Architecture and Construction?
-                        </a>
-                    </li>
-                </ul>
+                        {{range $element := .Site.Params.footer.learn}}
+                        <li>
+                            <a href="{{ $element.url }}">{{ $element.text }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
             </div>
 
             <div class="col-md-3 mb-md-0 mb-3">

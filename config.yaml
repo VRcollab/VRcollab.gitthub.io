@@ -1,0 +1,27 @@
+baseURL: http://example.org/
+languageCode: en-us
+title: VRcollab
+theme: theme
+
+params:
+  footer:
+    product:
+      - text: Login
+        url: https://google.com
+      - text: VRcollab Lite
+        url: https://google.com
+      - text: VRcollab Studio
+        url: https://google.com
+      - text: Coordination Features
+        url: https://google.com
+      - text: VR for AEC Proposal
+        url: https://google.com
+    learn:
+      - text: FAQ
+        url: https://google.com
+      - text: Helping Center
+        url: https://google.com
+      - text: Blog
+        url: https://google.com
+      - text: About Us
+        url: https://google.com
