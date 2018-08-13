@@ -1,36 +1,35 @@
 <footer class="page-footer font-small blue pt-4 footer">
-    <div class="container-fluid text-center text-md-left">
-        <div class="row">
+    <div class="container-fluid text-md-left">
+        <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">
             <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">Product</h5>
+                <img src="img/vrcollab-logo-white.png" style="width: 80%; padding-bottom: 15px; padding-top: 5px;">
+                <p>BIM and VDC Coordination in Virtual Reality.</p>
+            </div>
+
+            {{range $elementKey, $elementValue := .Site.Params.footer}}
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-capitalize" style="color: #0594cb">{{ $elementKey }}</h5>
                 <ul class="list-unstyled">
-                    {{range $element := .Site.Params.footer.product}}
+                    {{range $element := $elementValue}}
                     <li>
-                        <a href="{{ $element.url }}">{{ $element.text }}</a>
+                        <a href="{{ $element.url }}" style="color: white">{{ $element.text }}</a>
                     </li>
                     {{ end }}
                 </ul>
             </div>
-            <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">Learn</h5>
-                <ul class="list-unstyled">
-                        {{range $element := .Site.Params.footer.learn}}
-                        <li>
-                            <a href="{{ $element.url }}">{{ $element.text }}</a>
-                        </li>
-                        {{ end }}
-                    </ul>
-            </div>
+            {{ end }}
 
             <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">Contact Us</h5>
-                <p>Address: #01-16, 75 Ayer Rajah Crescent, Singapore 139953</p>
-                <p>Email: info@vrcollab.com</p>
+                <h5 style="color: #0594cb">Contact Us</h5>
+                <p>Address: #01-16, 75 Ayer Rajah Crescent, Singapore 139953
+                    <br /> Email: info@vrcollab.com
+                    <br /> Phone: +65 98144461
+                </p>
             </div>
         </div>
     </div>
 
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://vrcollab.com">VRcollab Pet. Ltd.</a>
+    <div class="footer-copyright pl-5 py-3" style="font-size: .75rem; color: #777">© 2018 Copyright:
+        <a href="https://vrcollab.com" style="color: #777">VRcollab Pte. Ltd.</a>
     </div>
 </footer>

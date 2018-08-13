@@ -5,7 +5,7 @@ theme: theme
 
 params:
   footer:
-    product:
+    Product:
       - text: Login
         url: https://google.com
       - text: VRcollab Lite
@@ -16,7 +16,7 @@ params:
         url: https://google.com
       - text: VR for AEC Proposal
         url: https://google.com
-    learn:
+    Learn:
       - text: FAQ
         url: https://google.com
       - text: Helping Center
