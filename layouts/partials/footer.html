@@ -2,22 +2,31 @@
     <div class="container-fluid text-md-left">
         <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">
             <div class="col-md-3 mb-md-0 mb-3">
-                <img src="{{ .Site.BaseURL }}img/vrcollab-logo-white.png" style="width: 80%; padding-bottom: 15px; padding-top: 5px;">
+                <img src="{{ .Site.BaseURL }}img/vrcollab-logo-white.png" style="width: 80%; max-width: 200px; padding-bottom: 15px; padding-top: 5px;">
                 <p>BIM and VDC Coordination in Virtual Reality.</p>
             </div>
 
-            {{range $elementKey, $elementValue := .Site.Params.footer}}
             <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-capitalize" style="color: #0594cb">{{ $elementKey }}</h5>
+                <h5 class="text-capitalize" style="color: #0594cb">Product</h5>
                 <ul class="list-unstyled">
-                    {{range $element := $elementValue}}
+                    {{range $element := .Site.Params.Footer.Product}}
                     <li>
                         <a href="{{ $element.url }}" style="color: white">{{ $element.text }}</a>
                     </li>
                     {{ end }}
                 </ul>
             </div>
-            {{ end }}
+
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-capitalize" style="color: #0594cb">Learn</h5>
+                <ul class="list-unstyled">
+                    {{range $element := .Site.Params.Footer.Learn}}
+                    <li>
+                        <a href="{{ $element.url }}" style="color: white">{{ $element.text }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
 
             <div class="col-md-3 mb-md-0 mb-3">
                 <h5 style="color: #0594cb">Contact Us</h5>

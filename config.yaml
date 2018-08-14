@@ -6,32 +6,32 @@ params:
   Header:
     Product:
       - text: Lite
-        url: /lite
+        url: "/lite"
       - text: Studio
         url: /studio
       - text: VR for AEC Proposal
         url: /vr-aec-proposal.pdf
     Learn:
       - text: Blog
-        url: please replace by blog url
-  footer:
-    Product:
-      - text: Login
-        url: https://google.com
-      - text: VRcollab Lite
-        url: https://google.com
-      - text: VRcollab Studio
-        url: https://google.com
-      - text: Coordination Features
-        url: https://google.com
-      - text: VR for AEC Proposal
-        url: https://google.com
-    Learn:
-      - text: FAQ
         url: https://google.com
       - text: Helping Center
         url: https://google.com
+      - text: FAQ
+        url: https://google.com
+  Footer:
+    Product:
+      - text: Login
+        url: https://account.vrcollab.com
+      - text: Lite
+        url: "/lite"
+      - text: Studio
+        url: /studio
+      - text: VR for AEC Proposal
+        url: /vr-aec-proposal.pdf
+    Learn:
       - text: Blog
         url: https://google.com
-      - text: About Us
+      - text: Helping Center
+        url: https://google.com
+      - text: FAQ
         url: https://google.com
