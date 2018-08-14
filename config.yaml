@@ -3,6 +3,17 @@ languageCode: en-us
 title: VRcollab
 
 params:
+  Header:
+    Product:
+      - text: Lite
+        url: /lite
+      - text: Studio
+        url: /studio
+      - text: VR for AEC Proposal
+        url: /vr-aec-proposal.pdf
+    Learn:
+      - text: Blog
+        url: please replace by blog url
   footer:
     Product:
       - text: Login
