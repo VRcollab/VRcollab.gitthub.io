@@ -3,6 +3,15 @@
     color: white;
 }
 
+.social-list .list-inline-item:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.social-list a {
+    font-size: 30px;
+    color: #202020;
+}
+
 .footer {
     background: #202020;
     color: white;
