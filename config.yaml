@@ -40,11 +40,11 @@ params:
   Header:
     Product:
       - text: Lite
-        url: "/lite"
+        url: lite
       - text: Studio
-        url: /studio
+        url: studio
       - text: VR for AEC Proposal
-        url: /vr-aec-proposal.pdf
+        url: vr-aec-proposal.pdf
     Learn:
       - text: Blog
         url: https://google.com
@@ -52,14 +52,16 @@ params:
         url: https://google.com
       - text: FAQ
         url: https://google.com
+      - text: About
+        url: about
   Footer:
     Product:
       - text: Login
         url: https://account.vrcollab.com
       - text: Lite
-        url: "/lite"
+        url: lite
       - text: Studio
-        url: /studio
+        url: studio
       - text: VR for AEC Proposal
         url: /vr-aec-proposal.pdf
     Learn:
@@ -69,3 +71,5 @@ params:
         url: https://google.com
       - text: FAQ
         url: https://google.com
+      - text: About
+        url: about

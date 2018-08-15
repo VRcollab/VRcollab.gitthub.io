@@ -2,7 +2,7 @@
     <div class="container-fluid text-md-left">
         <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">
             <div class="col-md-3 mb-md-0 mb-3">
-                <img src="{{ .Site.BaseURL }}img/vrcollab-logo-white.png" style="width: 80%; max-width: 200px; padding-bottom: 15px; padding-top: 5px;">
+                <img src='{{ "img/vrcollab-logo-white.png" | absURL }}' style="width: 80%; max-width: 200px; padding-bottom: 15px; padding-top: 5px;">
                 <p>BIM and VDC Coordination in Virtual Reality.</p>
             </div>
 
@@ -11,7 +11,7 @@
                 <ul class="list-unstyled">
                     {{range $element := .Site.Params.Footer.Product}}
                     <li>
-                        <a href="{{ $element.url }}" style="color: white">{{ $element.text }}</a>
+                        <a href="{{ $element.url | absURL }}" style="color: white">{{ $element.text }}</a>
                     </li>
                     {{ end }}
                 </ul>
@@ -22,7 +22,7 @@
                 <ul class="list-unstyled">
                     {{range $element := .Site.Params.Footer.Learn}}
                     <li>
-                        <a href="{{ $element.url }}" style="color: white">{{ $element.text }}</a>
+                        <a href="{{ $element.url | absURL }}" style="color: white">{{ $element.text }}</a>
                     </li>
                     {{ end }}
                 </ul>

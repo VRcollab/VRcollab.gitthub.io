@@ -17,7 +17,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {{range $element := .Site.Params.Header.Product }}
-                    <a class="dropdown-item" href="{{ $element.url }}">{{ $element.text }}</a>
+                    <a class="dropdown-item" href="{{ $element.url | absURL }}">{{ $element.text }}</a>
                     {{ end }}
                 </div>
             </li>
@@ -29,7 +29,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {{range $element := .Site.Params.Header.Learn }}
-                    <a class="dropdown-item" href="{{ $element.url }}">{{ $element.text }}</a>
+                    <a class="dropdown-item" href="{{ $element.url | absURL }}">{{ $element.text }}</a>
                     {{ end }}
                 </div>
             </li>
