@@ -20,25 +20,16 @@ params:
       src: img/navisworks-logo.png
     - name: HTC Vive
       src: img/htc-vive-logo.png
-    - name: Oculus
-      src: img/oculus-logo.png
     - name: Mixed Reality
       src: img/windows-mixed-reality-logo.png
+    - name: Oculus
+      src: img/oculus-logo.png
   SocialNetwork:
     Facebook: https://www.facebook.com/VRcollab/
     Twitter: https://twitter.com/vrcollab
     YouTube: https://www.youtube.com/channel/UCWrdTfVPQLrgeL-8tgbhhzg
     LinkedIn: https://www.linkedin.com/company/vrcollab/
-  MainGallery:
-    - http://placehold.it/400x300
-    - http://placehold.it/400x300
-    - http://placehold.it/400x300
-    - http://placehold.it/400x300
-    - http://placehold.it/400x300
-    - http://placehold.it/400x300
-    - http://placehold.it/400x300
-    - http://placehold.it/400x300
-  LiteGallery:
+  Features:
     - text: Measurements
       description: Accurate BIM measurements made with just a intuitive point and shoot motion.
       src: img/VRcollab LITE VDC Feature - Measurement.png
