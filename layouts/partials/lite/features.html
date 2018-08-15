@@ -33,7 +33,8 @@
         <div class="col-lg-6 col-md-6 text-center">
             <div class="d-block mb-4 h-100">
                 <img class="img-fluid" src="{{ $element.src | absURL }}" alt="">
-                <p class="font-weight-normal text-center mt-2" style="font-size: 1.2rem">{{ $element.text }}</p>
+                <p class="font-weight-normal text-center mt-2 mb-1" style="font-size: 1.2rem">{{ $element.text }}</p>
+                <p class="mx-auto" style="max-width: 400px;">{{ $element.description }}</p>
             </div>
         </div>
         {{ end }}

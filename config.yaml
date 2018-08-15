@@ -24,14 +24,24 @@ params:
     - http://placehold.it/400x300
     - http://placehold.it/400x300
   LiteGallery:
-    - text: Measurement
+    - text: Measurements
+      description: Accurate BIM measurements made with just a intuitive point and shoot motion.
       src: img/VRcollab LITE VDC Feature - Measurement.png
     - text: BIM Object Data
+      description: Retrieve any element object data easily in both VR and desktop interfaces.
       src: img/VRcollab LITE VDC Feature - BIM Object Data.png
-    - text: Annotation & Comments
+    - text: Annotations & Comments
+      description: Markup an area with hand motions and use speech-to-text to tag an object for reiteration.
       src: img/VRcollab LITE VDC Feature - Annotation.png
-    - text: Measurement
-      src: img/VRcollab LITE VDC Feature - Measurement.png
+    - text: Render Modes
+      description: Switch render modes depending on the discussion for further design communication.
+      src: img/VRCOLLAB LITE VDC Feature - Model View Modes.jpg
+    - text: Merge BIM Models
+      description: Combine models from multiple BIM software into a single VR interactive model.
+      src: img/VRcollab LITE VDC Feature - Merge BIM Models.png
+    - text: Desktop Friendly
+      description: All features are that are available in VR are also enabled for mouse and keyboard usage.
+      src: img/VRcollab LITE VDC Feature - Desktop Mode.jpg
 
   Header:
     Product:
