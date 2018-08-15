@@ -3,6 +3,12 @@ languageCode: en-us
 title: VRcollab
 
 params:
+  MainCoverCarousel:
+    - img/cover-bg.jpg
+    - http://placehold.it/400x300
+    - http://placehold.it/400x300
+    - http://placehold.it/400x300
+    - http://placehold.it/400x300
   SocialNetwork:
     Facebook: https://google.com
     Twitter: https://google.com
