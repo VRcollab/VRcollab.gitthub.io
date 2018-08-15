@@ -23,6 +23,19 @@ params:
     - http://placehold.it/400x300
     - http://placehold.it/400x300
     - http://placehold.it/400x300
+  LiteGallery:
+    - text: Measurement
+      src: img/vrcollab-lite.png
+    - text: Measurement
+      src: img/vrcollab-lite.png
+    - text: Measurement
+      src: img/vrcollab-lite.png
+    - text: Measurement
+      src: img/vrcollab-lite.png
+    - text: Measurement
+      src: img/vrcollab-lite.png
+    - text: Measurement
+      src: img/vrcollab-lite.png
 
   Header:
     Product:
