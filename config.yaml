@@ -9,6 +9,21 @@ params:
     - http://placehold.it/400x300
     - http://placehold.it/400x300
     - http://placehold.it/400x300
+  Integration:
+    - name: Revit
+      src: img/revit-logo.png
+    - name: SketchUp
+      src: img/sketchup-logo.png
+    - name: ArchiCAD
+      src: img/archicad-logo.png
+    - name: Navisworks
+      src: img/navisworks-logo.png
+    - name: HTC Vive
+      src: img/htc-vive-logo.png
+    - name: Oculus
+      src: img/oculus-logo.png
+    - name: Windows MR
+      src: img/windows-mixed-reality-logo.png
   SocialNetwork:
     Facebook: https://www.facebook.com/VRcollab/
     Twitter: https://twitter.com/vrcollab
