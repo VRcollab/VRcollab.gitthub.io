@@ -1,3 +1,40 @@
-<div>
-    this is features
-</div>
+<div class="container">
+        <div class="text-center my-4">
+            <h2 class="display-7 font-weight-normal text-center">VDC Oriented Features</h2>
+            <ul class="list-inline social-list">
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.Facebook | absURL }}">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.Twitter | absURL }}">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.YouTube | absURL }}">
+                        <i class="fab fa-youtube-square"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.LinkedIn | absURL }}">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+            <button type="button" class="btn btn-primary">Checkout More Details</button>
+        </div>
+    
+    
+    
+        <div class="row text-center text-lg-left">
+            {{ range $element := .Site.Params.MainGallery }}
+            <div class="col-lg-3 col-md-4 col-xs-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="{{ $element | absURL }}" alt="">
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
