@@ -22,7 +22,7 @@ params:
       src: img/htc-vive-logo.png
     - name: Oculus
       src: img/oculus-logo.png
-    - name: Windows MR
+    - name: Mixed Reality
       src: img/windows-mixed-reality-logo.png
   SocialNetwork:
     Facebook: https://www.facebook.com/VRcollab/

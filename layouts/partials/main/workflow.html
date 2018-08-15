@@ -3,13 +3,21 @@
         <h2 class="display-7 font-weight-normal text-center">Step 1: Design in BIM and convert into VR</h2>
         <p>Design Building in BIM software and convert to VR instantly.
             <br>VRcollab supports a wide range of AEC softwares and headsets.</p>
-        <ul class="list-inline social-list">
-            {{ range $element := .Site.Params.Integration }}
+        <ul class="list-inline social-list-sm">
+            {{ range $index, $element := .Site.Params.Integration }} {{ if le $index 3 }}
             <li class="list-inline-item">
                 <img src="{{ $element.src | absURL }}" style="width: 60px;">
                 <div>{{ $element.name }}</div>
             </li>
-            {{ end }}
+            {{ end }} {{ end }}
+        </ul>
+        <ul class="list-inline social-list-sm">
+            {{ range $index, $element := .Site.Params.Integration }} {{ if ge $index 4 }}
+            <li class="list-inline-item">
+                <img src="{{ $element.src | absURL }}" style="width: 60px;">
+                <div>{{ $element.name }}</div>
+            </li>
+            {{ end }} {{ end }}
         </ul>
         <p>Convert up to 7GB BIM models automatically for use in Virtual Reality in less than 10 minutes.</p>
         <button type="button" class="btn btn-primary">Checkout More Details</button>
