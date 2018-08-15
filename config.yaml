@@ -25,17 +25,13 @@ params:
     - http://placehold.it/400x300
   LiteGallery:
     - text: Measurement
-      src: img/vrcollab-lite.png
+      src: img/VRcollab LITE VDC Feature - Measurement.png
+    - text: BIM Object Data
+      src: img/VRcollab LITE VDC Feature - BIM Object Data.png
+    - text: Annotation & Comments
+      src: img/VRcollab LITE VDC Feature - Annotation.png
     - text: Measurement
-      src: img/vrcollab-lite.png
-    - text: Measurement
-      src: img/vrcollab-lite.png
-    - text: Measurement
-      src: img/vrcollab-lite.png
-    - text: Measurement
-      src: img/vrcollab-lite.png
-    - text: Measurement
-      src: img/vrcollab-lite.png
+      src: img/VRcollab LITE VDC Feature - Measurement.png
 
   Header:
     Product:

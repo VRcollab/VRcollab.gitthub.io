@@ -30,7 +30,7 @@
 
     <div class="row text-center text-lg-left">
         {{ range $element := .Site.Params.LiteGallery }}
-        <div class="col-lg-4 col-md-6 text-center">
+        <div class="col-lg-6 col-md-6 text-center">
             <div class="d-block mb-4 h-100">
                 <img class="img-fluid" src="{{ $element.src | absURL }}" alt="">
                 <p class="font-weight-normal text-center mt-2" style="font-size: 1.2rem">{{ $element.text }}</p>
