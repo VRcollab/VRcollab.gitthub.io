@@ -16,3 +16,11 @@
     background: #202020;
     color: white;
 }
+
+.hero-image {
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
