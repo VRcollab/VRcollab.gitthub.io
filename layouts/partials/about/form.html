@@ -2,6 +2,28 @@
     <div class="row my-4">
         <div class="col-md-8 mx-auto">
             <h2 class="display-7 font-weight-normal">Contact Us</h2>
+            <ul class="list-inline social-list-sm">
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.Facebook | absURL }}">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.Twitter | absURL }}">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.YouTube | absURL }}">
+                        <i class="fab fa-youtube-square"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.LinkedIn | absURL }}">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
             <form>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Email address</label>
