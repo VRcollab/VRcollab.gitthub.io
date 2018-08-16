@@ -1,8 +1,8 @@
 <div class="hero-image text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ .Site.BaseURL }}img/cover-bg.jpg'); height: 400px;">
     <div class="container" style="color: white; padding-top: 75px;">
-        <img src="{{ .Site.BaseURL }}img/vrcollab-logo-single.png" style="width: 80px;">
+        <img src='{{ "img/vrcollab-logo-single.png" | absURL }}' style="width: 80px;">
         <h1>VRcollab Lite</h1>
         <p>Validate and Coordinate your designs instantly in Virtual Reality</p>
-        <a class="btn btn-primary" href="#">START 14-DAY TRIAL</a>
+        <a class="btn btn-primary" href="{{ .Site.Params.Register | absURL }}">START 14-DAY TRIAL</a>
     </div>
 </div>

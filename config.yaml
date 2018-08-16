@@ -3,6 +3,8 @@ languageCode: en-us
 title: VRcollab
 
 params:
+  Register: https://account.vrcollab.com/register
+  Login: https://account.vrcollab.com
   MainCoverCarousel:
     - img/cover-bg.jpg
     - http://placehold.it/400x300
