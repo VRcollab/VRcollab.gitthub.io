@@ -58,7 +58,7 @@ params:
       - text: Studio
         url: studio
       - text: VR for AEC Proposal
-        url: vr-aec-proposal.pdf
+        url: VDC 2018 VRcollab AEC Proposal Deck.pdf
     Learn:
       - text: Blog
         url: https://google.com
@@ -77,7 +77,7 @@ params:
       - text: Studio
         url: studio
       - text: VR for AEC Proposal
-        url: /vr-aec-proposal.pdf
+        url: VDC 2018 VRcollab AEC Proposal Deck.pdf
     Learn:
       - text: Blog
         url: https://google.com
