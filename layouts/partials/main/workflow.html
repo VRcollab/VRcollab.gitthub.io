@@ -6,7 +6,7 @@
         <ul class="list-inline social-list-sm">
             {{ range $index, $element := .Site.Params.Integration }} {{ if le $index 3 }}
             <li class="list-inline-item">
-                <img src="{{ $element.src | absURL }}" style="width: 60px;">
+                <img src="{{ $element.src | absURL }}" style="width: 60px;" alt="{{ $element.name }}">
                 <div>{{ $element.name }}</div>
             </li>
             {{ end }} {{ end }}
@@ -14,7 +14,7 @@
         <ul class="list-inline social-list-sm">
             {{ range $index, $element := .Site.Params.Integration }} {{ if ge $index 4 }}
             <li class="list-inline-item">
-                <img src="{{ $element.src | absURL }}" style="width: 60px;">
+                <img src="{{ $element.src | absURL }}" style="width: 60px;" alt="{{ $element.name }}">
                 <div>{{ $element.name }}</div>
             </li>
             {{ end }} {{ end }}
