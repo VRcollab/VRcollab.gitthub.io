@@ -35,6 +35,12 @@ params:
     - text: Measurements
       description: Accurate BIM measurements made with just a intuitive point and shoot motion.
       src: img/VRcollab LITE VDC Feature - Measurement.png
+    - text: Multi-User
+      description: Coordinate BIM across the internet in Virtual Reality, up to 8 VR users at once.
+      src: img/VRCOLLAB LITE VDC Feature - Cross Internet BIM Coordination.jpg
+    - text: Daylight Analysis
+      description: Set time of day and sun position in order to experience your building in dusk to dawn conditions.
+      src: img/VRcollab LITE VDC Feature - Daylight Analysis.jpg
     - text: BIM Object Data
       description: Retrieve any element object data easily in both VR and desktop interfaces.
       src: img/VRcollab LITE VDC Feature - BIM Object Data.png
