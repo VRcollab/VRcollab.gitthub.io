@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+
+<title>VRcollab Lite - BIM and VDC Coordination in Virtual Reality</title>
+<head>
+    <link rel="stylesheet" href="http://vrcollab.github.io/css/style.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cousine">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+    
+    <link rel="stylesheet" href="http://vrcollab.github.io/css/bootstrap.min.css">
+    <script src="http://vrcollab.github.io/js/jquery.min.js"></script>
+    <script src="http://vrcollab.github.io/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+<link rel="stylesheet" href='http://vrcollab.github.io/css/baguetteBox.min.css'>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="http://vrcollab.github.io/">
+        <img src="http://vrcollab.github.io/img/vrcollab-logo.png" width="115" height="30" alt="">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="http://vrcollab.github.io/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Product
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    <a class="dropdown-item" href="http://vrcollab.github.io/lite">Lite</a>
+                    
+                    <a class="dropdown-item" href="http://vrcollab.github.io/studio">Studio</a>
+                    
+                    <a class="dropdown-item" href="http://vrcollab.github.io/VDC%202018%20VRcollab%20AEC%20Proposal%20Deck.pdf">VR for AEC Proposal</a>
+                    
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Learn
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    <a class="dropdown-item" href="https://blog.vrcollab.com" target="_blank">Blog</a>
+                    
+                    <a class="dropdown-item" href="https://help.vrcollab.com/" target="_blank">Helping Center</a>
+                    
+                    <a class="dropdown-item" href="https://help.vrcollab.com/hc/en-us/sections/115000637574-5-General-FAQ" target="_blank">FAQ</a>
+                    
+                    <a class="dropdown-item" href="http://vrcollab.github.io/about" target="_blank">About</a>
+                    
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://vrcollab.github.io/about">Contact Us</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://account.vrcollab.com/register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-primary" href="https://account.vrcollab.com" role="button">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="hero-image text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://vrcollab.github.io/img/cover-bg.jpg'); height: 400px;">
+    <div class="container" style="color: white; padding-top: 75px;">
+        <img src='http://vrcollab.github.io/img/vrcollab-logo-single.png' style="width: 80px;">
+        <h1>VRcollab Lite</h1>
+        <p>Validate and Coordinate your designs instantly in Virtual Reality</p>
+        <a class="btn btn-primary" href="https://account.vrcollab.com/register">START 14-DAY TRIAL</a>
+    </div>
+</div>
+    <div class="container">
+    <div class="text-center my-4">
+        <h2 class="display-7 font-weight-normal text-center">Design in BIM and convert into VR</h2>
+        <p>Design Building in BIM software and convert to VR instantly.
+            <br>VRcollab supports a wide range of AEC softwares and headsets.</p>
+        <ul class="list-inline social-list-sm">
+             
+            <li class="list-inline-item">
+                <img src="http://vrcollab.github.io/img/revit-logo.png" style="width: 60px;">
+                <div>Revit</div>
+            </li>
+              
+            <li class="list-inline-item">
+                <img src="http://vrcollab.github.io/img/sketchup-logo.png" style="width: 60px;">
+                <div>SketchUp</div>
+            </li>
+              
+            <li class="list-inline-item">
+                <img src="http://vrcollab.github.io/img/archicad-logo.png" style="width: 60px;">
+                <div>ArchiCAD</div>
+            </li>
+              
+            <li class="list-inline-item">
+                <img src="http://vrcollab.github.io/img/navisworks-logo.png" style="width: 60px;">
+                <div>Navisworks</div>
+            </li>
+                   
+        </ul>
+        <ul class="list-inline social-list-sm">
+                     
+            <li class="list-inline-item">
+                <img src="http://vrcollab.github.io/img/htc-vive-logo.png" style="width: 60px;">
+                <div>HTC Vive</div>
+            </li>
+              
+            <li class="list-inline-item">
+                <img src="http://vrcollab.github.io/img/windows-mixed-reality-logo.png" style="width: 60px;">
+                <div>Mixed Reality</div>
+            </li>
+              
+            <li class="list-inline-item">
+                <img src="http://vrcollab.github.io/img/oculus-logo.png" style="width: 60px;">
+                <div>Oculus</div>
+            </li>
+             
+        </ul>
+        <p>Convert up to 7GB BIM models automatically for use in Virtual Reality in less than 10 minutes.</p>
+    </div>
+</div>
+    <div class="text-center" style="background-color: #202020;color: white;">
+    <div class="container py-4">
+        <div class="pb-4">
+            <h2 class="display-7 font-weight-normal">Key Benefits</h2>
+        </div>
+        <div class="row mx-4">
+            <div class="col-md-6 col-sm-12 pb-4">
+                <h4>1. Depth & Perspective Information</h4>
+                <p>Such information is often loss when viewed on a 2D screen</p>
+
+            </div>
+            <div class="col-md-6 col-sm-12 pb-4">
+                <h4>2. Faster Design Approvals</h4>
+                <p>Communicate design effectively in both external presentations and internal coordinations</p>
+            </div>
+            <div class="col-md-6 col-sm-12 pb-4">
+                <h4>3. Intuitive Manipulation of BIM</h4>
+                <p>No time wastage due to BIM software that was not created with efficient coordination in mind</p>
+
+            </div>
+            <div class="col-md-6 col-sm-12 pb-4">
+                <h4>4. Minimise Design Errors</h4>
+                <p>Design errors flare up in VR allowing for quicker and more pinpoint mitigation</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container text-center">
+    <div class="my-4">
+        <h2 class="display-7 font-weight-normal text-center">VDC Oriented Features</h2>
+
+    </div>
+    <div class="row text-center text-lg-left tz-gallery">
+        
+        <div class="col-lg-6 col-md-6 text-center">
+            <div class="d-block mb-4 h-100">
+                <a class="lightbox" href='http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20Measurement.png'>
+                    <img class="img-fluid" src="http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20Measurement.png" alt="">
+                </a>
+                <p class="font-weight-normal text-center mt-2 mb-1" style="font-size: 1.2rem">Measurements</p>
+                <p class="mx-auto" style="max-width: 400px;">Accurate BIM measurements made with just a intuitive point and shoot motion.</p>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 text-center">
+            <div class="d-block mb-4 h-100">
+                <a class="lightbox" href='http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20BIM%20Object%20Data.png'>
+                    <img class="img-fluid" src="http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20BIM%20Object%20Data.png" alt="">
+                </a>
+                <p class="font-weight-normal text-center mt-2 mb-1" style="font-size: 1.2rem">BIM Object Data</p>
+                <p class="mx-auto" style="max-width: 400px;">Retrieve any element object data easily in both VR and desktop interfaces.</p>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 text-center">
+            <div class="d-block mb-4 h-100">
+                <a class="lightbox" href='http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20Annotation.png'>
+                    <img class="img-fluid" src="http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20Annotation.png" alt="">
+                </a>
+                <p class="font-weight-normal text-center mt-2 mb-1" style="font-size: 1.2rem">Annotations &amp; Comments</p>
+                <p class="mx-auto" style="max-width: 400px;">Markup an area with hand motions and use speech-to-text to tag an object for reiteration.</p>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 text-center">
+            <div class="d-block mb-4 h-100">
+                <a class="lightbox" href='http://vrcollab.github.io/img/VRCOLLAB%20LITE%20VDC%20Feature%20-%20Model%20View%20Modes.jpg'>
+                    <img class="img-fluid" src="http://vrcollab.github.io/img/VRCOLLAB%20LITE%20VDC%20Feature%20-%20Model%20View%20Modes.jpg" alt="">
+                </a>
+                <p class="font-weight-normal text-center mt-2 mb-1" style="font-size: 1.2rem">Render Modes</p>
+                <p class="mx-auto" style="max-width: 400px;">Switch render modes depending on the discussion for further design communication.</p>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 text-center">
+            <div class="d-block mb-4 h-100">
+                <a class="lightbox" href='http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20Merge%20BIM%20Models.png'>
+                    <img class="img-fluid" src="http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20Merge%20BIM%20Models.png" alt="">
+                </a>
+                <p class="font-weight-normal text-center mt-2 mb-1" style="font-size: 1.2rem">Merge BIM Models</p>
+                <p class="mx-auto" style="max-width: 400px;">Combine models from multiple BIM software into a single VR interactive model.</p>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 text-center">
+            <div class="d-block mb-4 h-100">
+                <a class="lightbox" href='http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20Desktop%20Mode.jpg'>
+                    <img class="img-fluid" src="http://vrcollab.github.io/img/VRcollab%20LITE%20VDC%20Feature%20-%20Desktop%20Mode.jpg" alt="">
+                </a>
+                <p class="font-weight-normal text-center mt-2 mb-1" style="font-size: 1.2rem">Desktop Friendly</p>
+                <p class="mx-auto" style="max-width: 400px;">All features are that are available in VR are also enabled for mouse and keyboard usage.</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+    <div class="container text-center">
+    <div class="mt-4">
+        <h2 class="display-7 font-weight-normal text-center">Our clients</h2>
+    </div>
+    <div>
+        <img src='http://vrcollab.github.io/img/clients.png' style="width: 100%; max-width: 800px; opacity: 0.7;">
+    </div>
+    <ul class="list-inline">
+        <li class="list-inline-item">
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                    <b>Rexter Retana</b>, BIM Lead at RSP Architects Planners & Engineers</div>
+                <div class="card-body">
+                    <p class="card-text">"VRCollab truly redefine collaboration in construction. It allows us to collaborate more effectively
+                        and efficiently while immersing ourselves into the virtual space; which was unachievable in current
+                        conventional practice."</p>
+                </div>
+            </div>
+        </li>
+        <li class="list-inline-item">
+            <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                <div class="card-header">
+                    <b>Liu Yizhe</b>, BIM Engineer at Sembcorp A&E Pte Ltd</div>
+                <div class="card-body">
+                    <p class="card-text">"VRcollab bridges communication gaps between owners, end-users and multi-disciplinary industry professionals.
+                        It allows us to focus capturing user requirements and resolving coordination issues upfront easily
+                        before actual construction."</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+    <div class="text-center" style="background-color: #202020;color: white;">
+    <div class="container py-4">
+        <div class="pb-4">
+            <h2 class="display-7 font-weight-normal">Pricing</h2>
+        </div>
+        <div class="row mx-4" style="color: black;">
+            <div class="col-md-12 col-center m-auto pb-4">
+                <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm" style="min-width: 250px;">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">14-Day Free Trial</h4>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h1 class="card-title pricing-card-title" style="font-size: 30px;">$0</h1>
+                            <p>Register an account to try out VRcollab today.
+                                <br> No Virtual Reality set required for desktop feature use.</p>
+                            <a class="btn btn-lg btn-block btn-outline-primary mt-auto" href="https://account.vrcollab.com/register">Sign-up for free</a>
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm" style="min-width: 250px;">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Lite</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title" style="font-size: 30px;">$2200 USD
+                                <small class="text-muted" style="font-size: 15px;">/ year</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>1 License per user</li>
+                                <li>Full VDC features</li>
+                                <li>Beta Releases</li>
+                                <li>Continous Update</li>
+                                <li>Online dev support</li>
+                            </ul>
+                            <a href='http://vrcollab.github.io/about'>*Contact us for demo and quotation</a>
+                            <a class="btn btn-lg btn-block btn-primary mt-auto" href="https://account.vrcollab.com/register">Purchase</a>
+                            
+                        </div>
+                    </div>
+                    <div class="card mb-4 shadow-sm" style="min-width: 250px;">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Enterprise / Studio</h4>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h1 class="card-title pricing-card-title" style="font-size: 30px;">Contact Us
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <p>Contact us for a discussion to understand your user requirements.
+                                    <br> System Integrators are welcomed.</p>
+                            </ul>
+                            <a class="btn btn-lg btn-block btn-primary mt-auto" href='http://vrcollab.github.io/about'>Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container">
+    <div class="text-center mt-4">
+        <h2 class="display-7 font-weight-normal text-center mb-4">Allow us to assist you as a Progressive in the Industry</h2>
+        <div class="row">
+            <div class="col-md-4 pb-4">
+                <p>Help others learn more about VRcollab while championing VDC technologies to both your company and peers.</p>
+                <a class="btn btn-primary" href='http://vrcollab.github.io/VDC%202018%20VRcollab%20AEC%20Proposal%20Deck.pdf'>VR for AEC Proposal</a>
+            </div>
+            <div class="col-md-4 pb-4">
+                <p>Do not hesitate to contact us should you have any questions or clarifications and we would love to speak
+                    to you.</p>
+                <a class="btn btn-primary" href='http://vrcollab.github.io/about'>Contact us</a>
+            </div>
+            <div class="col-md-4 pb-4">
+                <p>Keep in touch by following us on our social media channels; updating you with the latest AEC technologies.</p>
+                <ul class="list-inline social-list">
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/VRcollab/" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/vrcollab" target="_blank">
+                            <i class="fab fa-twitter-square"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.youtube.com/channel/UCWrdTfVPQLrgeL-8tgbhhzg" target="_blank">
+                            <i class="fab fa-youtube-square"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/company/vrcollab/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="page-footer font-small blue pt-4 footer">
+    <div class="container-fluid text-md-left">
+        <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">
+            <div class="col-md-3 mb-md-0 mb-3">
+                <a href="http://vrcollab.github.io/"><img src='http://vrcollab.github.io/img/vrcollab-logo-white.png' style="width: 80%; max-width: 200px; padding-bottom: 15px; padding-top: 5px;"></a>
+                <p>BIM and VDC Coordination in Virtual Reality.</p>
+            </div>
+
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-capitalize" style="color: #0594cb">Product</h5>
+                <ul class="list-unstyled">
+                    
+                    <li>
+                        <a href="https://account.vrcollab.com" style="color: white">Login</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://vrcollab.github.io/lite" style="color: white">Lite</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://vrcollab.github.io/studio" style="color: white">Studio</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://vrcollab.github.io/VDC%202018%20VRcollab%20AEC%20Proposal%20Deck.pdf" style="color: white">VR for AEC Proposal</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-capitalize" style="color: #0594cb">Learn</h5>
+                <ul class="list-unstyled">
+                    
+                    <li>
+                        <a href="https://blog.vrcollab.com" style="color: white" target="_blank">Blog</a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://help.vrcollab.com/" style="color: white" target="_blank">Helping Center</a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://help.vrcollab.com/hc/en-us/sections/115000637574-5-General-FAQ" style="color: white" target="_blank">FAQ</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://vrcollab.github.io/about" style="color: white" target="_blank">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 style="color: #0594cb">Contact Us</h5>
+                <p>Address: #01-16, 75 Ayer Rajah Crescent, Singapore 139953
+                    <br /> Email: info@vrcollab.com
+                    <br /> Phone: +65 98144461
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright pl-5 py-3" style="font-size: .75rem; color: #777">© 2018 Copyright:
+        <a href="http://vrcollab.github.io/" style="color: #777">VRcollab Pte. Ltd.</a>
+    </div>
+</footer>
+    <script src='http://vrcollab.github.io/js/baguetteBox.min.js'></script>
+    <script>
+    baguetteBox.run('.tz-gallery');
+    </script>
+</body>
+
+</html>
