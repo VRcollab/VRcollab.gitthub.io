@@ -80,10 +80,10 @@ params:
         url: VDC 2018 VRcollab AEC Proposal Deck.pdf
     Learn:
       - text: Blog
-        url: https://google.com
+        url: https://blog.vrcollab.com
       - text: Helping Center
-        url: https://google.com
+        url: https://help.vrcollab.com/
       - text: FAQ
-        url: https://google.com
+        url: https://help.vrcollab.com/hc/en-us/sections/115000637574-5-General-FAQ
       - text: About
         url: about

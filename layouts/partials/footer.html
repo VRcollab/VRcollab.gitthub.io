@@ -2,7 +2,7 @@
     <div class="container-fluid text-md-left">
         <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">
             <div class="col-md-3 mb-md-0 mb-3">
-                <img src='{{ "img/vrcollab-logo-white.png" | absURL }}' style="width: 80%; max-width: 200px; padding-bottom: 15px; padding-top: 5px;">
+                <a href="{{ .Site.BaseURL }}"><img src='{{ "img/vrcollab-logo-white.png" | absURL }}' style="width: 80%; max-width: 200px; padding-bottom: 15px; padding-top: 5px;"></a>
                 <p>BIM and VDC Coordination in Virtual Reality.</p>
             </div>
 
@@ -22,7 +22,7 @@
                 <ul class="list-unstyled">
                     {{range $element := .Site.Params.Footer.Learn}}
                     <li>
-                        <a href="{{ $element.url | absURL }}" style="color: white">{{ $element.text }}</a>
+                        <a href="{{ $element.url | absURL }}" style="color: white" target="_blank">{{ $element.text }}</a>
                     </li>
                     {{ end }}
                 </ul>
@@ -39,6 +39,6 @@
     </div>
 
     <div class="footer-copyright pl-5 py-3" style="font-size: .75rem; color: #777">© 2018 Copyright:
-        <a href="https://vrcollab.com" style="color: #777">VRcollab Pte. Ltd.</a>
+        <a href="{{ .Site.BaseURL }}" style="color: #777">VRcollab Pte. Ltd.</a>
     </div>
 </footer>
