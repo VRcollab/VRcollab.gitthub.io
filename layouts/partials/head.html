@@ -1,12 +1,12 @@
 <head>
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cousine">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.min.css">
-    <script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
-    <script src="{{ .Site.BaseURL }}js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- bootstrap & jquery -->
+    <script src='{{ "vendor/js/jquery.min.js" | absURL }}'></script>
+    <link rel="stylesheet" href='{{ "vendor/css/bootstrap.min.css" | absURL }}'>
+    <script src='{{ "vendor/js/bootstrap.min.js" | absURL }}'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href='{{ "css/style.css" | absURL }}'>
 </head>
