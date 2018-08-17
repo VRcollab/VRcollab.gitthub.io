@@ -32,3 +32,7 @@
     background-size: cover;
     position: relative;
 }
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}

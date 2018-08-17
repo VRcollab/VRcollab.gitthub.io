@@ -1,76 +1,18 @@
 <div class="tz-gallery px-4">
     <div class="row">
+        {{ range $element := .Site.Params.CaveGallery }}
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <a class="lightbox" href='{{ "img/vrcollab-studio.png" | absURL }}'>
-                    <img src='{{ "img/vrcollab-studio.png" | absURL }}' alt="Park" style="width: 100%;">
+                <a class="lightbox" href='{{ $element.src | absURL }}'>
+                    <img src='{{ $element.src | absURL }}' alt="Park" style="width: 100%;">
                 </a>
                 <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua.</p>
+                    <h3>{{ $element.title }}</h3>
+                    <p>{{ $element.text }}</p>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href='{{ "img/vrcollab-studio.png" | absURL }}'>
-                    <img src='{{ "img/vrcollab-studio.png" | absURL }}' alt="Park" style="width: 100%;">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href='{{ "img/vrcollab-studio.png" | absURL }}'>
-                    <img src='{{ "img/vrcollab-studio.png" | absURL }}' alt="Park" style="width: 100%;">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href='{{ "img/vrcollab-studio.png" | absURL }}'>
-                    <img src='{{ "img/vrcollab-studio.png" | absURL }}' alt="Park" style="width: 100%;">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href='{{ "img/vrcollab-studio.png" | absURL }}'>
-                    <img src='{{ "img/vrcollab-studio.png" | absURL }}' alt="Park" style="width: 100%;">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href='{{ "img/vrcollab-studio.png" | absURL }}'>
-                    <img src='{{ "img/vrcollab-studio.png" | absURL }}' alt="Park" style="width: 100%;">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
+        {{ end }}
     </div>
+</div>
 </div>

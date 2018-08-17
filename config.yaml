@@ -50,6 +50,16 @@ params:
     - text: Desktop Friendly
       description: All features are that are available in VR are also enabled for mouse and keyboard usage.
       src: img/VRcollab LITE VDC Feature - Desktop Mode.jpg
+  CaveGallery:
+    - src: img/cave-gallery-1.jpg
+      title: Thumbnail label
+      text: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    - src: img/cave-gallery-2.jpg
+      title: Thumbnail label
+      text: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    - src: img/cave-gallery-3.jpg
+      title: Thumbnail label
+      text: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
   Header:
     Product:
