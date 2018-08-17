@@ -57,12 +57,12 @@ params:
       description: All features are that are available in VR are also enabled for mouse and keyboard usage.
       src: img/VRcollab LITE VDC Feature - Desktop Mode.jpg
   CaveGallery:
-    - src: img/cave-gallery-1.jpg
-      text: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    - src: img/cave-gallery-2.jpg
-      text: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    - src: img/cave-gallery-3.jpg
-      text: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    - src: img/Renowned Architect Moshe Safdie using VRcollab Studio to review design.jpg
+      text: Renowned Architect Moshe Safdie using VRcollab Studio to review design.
+    - src: img/HDB VDC BIM Training Session.jpg
+      text: VRcollab Studio setup in Housing and Development Board of Singapore.
+    - src: img/Surbana Jurong using VRcollab for Live VDC Coordination.jpg
+      text: Surbana Jurong using VRcollab for Live VDC Coordination.
 
   Header:
     Product:
