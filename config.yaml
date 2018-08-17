@@ -1,6 +1,7 @@
 baseURL: https://vrcollab.github.io/
 languageCode: en-us
 title: VRcollab
+googleAnalytics: UA-124205822-1
 
 params:
   Register: https://account.vrcollab.com/register
