@@ -6,6 +6,7 @@ hugo
 git checkout master
 mv public /tmp/hugo.vrcollab.com
 rm -rf *
+git checkout CNAME
 mv /tmp/hugo.vrcollab.com/* .
 rm -rf /tmp/hugo.vrcollab.com
 
