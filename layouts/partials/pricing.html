@@ -10,11 +10,11 @@
                         <div class="card-header">
                             <h4 class="my-0 font-weight-normal">14-Day Free Trial</h4>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h1 class="card-title pricing-card-title" style="font-size: 30px;">$0</h1>
                             <p>Register an account to try out VRcollab today.
                                 <br> No Virtual Reality set required for desktop feature use.</p>
-                            <a class="btn btn-lg btn-block btn-outline-primary mb-2" href="{{ .Site.Params.Register | absURL }}">START 14-DAY TRIAL</a>
+                            <a class="btn btn-lg btn-block btn-outline-primary mt-auto" href="{{ .Site.Params.Register | absURL }}">Sign-up for free</a>
                         </div>
                     </div>
                     <div class="card mb-4 shadow-sm" style="min-width: 250px;">
@@ -32,22 +32,23 @@
                                 <li>Continous Update</li>
                                 <li>Online dev support</li>
                             </ul>
-                            <a class="btn btn-lg btn-block btn-primary mb-2" href="{{ .Site.Params.Register | absURL }}">Purchase</a>
                             <a href='{{ "about" | absURL }}'>*Contact us for demo and quotation</a>
+                            <a class="btn btn-lg btn-block btn-primary mt-auto" href="{{ .Site.Params.Register | absURL }}">Purchase</a>
+                            
                         </div>
                     </div>
                     <div class="card mb-4 shadow-sm" style="min-width: 250px;">
                         <div class="card-header">
                             <h4 class="my-0 font-weight-normal">Enterprise / Studio</h4>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h1 class="card-title pricing-card-title" style="font-size: 30px;">Contact Us
                             </h1>
                             <ul class="list-unstyled mt-3 mb-4">
                                 <p>Contact us for a discussion to understand your user requirements.
                                     <br> System Integrators are welcomed.</p>
                             </ul>
-                            <a class="btn btn-lg btn-block btn-primary mb-2" href='{{ "about" | absURL }}'>Contact Us</a>
+                            <a class="btn btn-lg btn-block btn-primary mt-auto" href='{{ "about" | absURL }}'>Contact Us</a>
                         </div>
                     </div>
                 </div>
