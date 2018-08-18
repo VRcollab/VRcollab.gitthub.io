@@ -1,0 +1,10 @@
+.post img {
+    border-radius: 2px;
+    width: 100%;
+}
+
+.post blockquote {
+    margin: 40px 0;
+    padding: 0 1rem;
+    border-left: 4px double;
+}

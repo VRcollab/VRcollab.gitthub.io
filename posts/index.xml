@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on VRcollab</title>
+    <link>https://vrcollab.com/posts/</link>
+    <description>Recent content in Posts on VRcollab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Jun 2018 00:16:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://vrcollab.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VRcollab STUDIO 2.0: Are CAVEs replacing coordination rooms in Architecture and Construction?</title>
+      <link>https://vrcollab.com/posts/vrcollab-studio-2.0/</link>
+      <pubDate>Tue, 19 Jun 2018 00:16:00 +0800</pubDate>
+      
+      <guid>https://vrcollab.com/posts/vrcollab-studio-2.0/</guid>
+      <description>Building design coordination has traditionally been done in both meeting and board rooms, usually in front of a large screen while stakeholder’s perspective are dictated by a single pilot. Navigating BIM software to the best possible perspective in order to coordinate both clashes and design.
+This tedious process is further complicated by another two professionals whose role is to capture the projected screen and annotate important considerations. All this is then finally consolidated for further interrogation and remodelling.</description>
+    </item>
+    
+  </channel>
+</rss>
