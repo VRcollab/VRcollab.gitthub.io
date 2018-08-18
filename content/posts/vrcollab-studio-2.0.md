@@ -24,11 +24,11 @@ Would this not increase the efficiency of both design coordination and understan
 
 However, a common pain point when VR goggles are used in coordination would be that VR and non-VR participants are visually isolated due to the technology’s immersive nature. This is where the inclusive nature of a C.A.V.E. system can be incorporated to accommodate to a larger group.
 
-VRcollab STUDIO 2.0 is a software solution which incorporates the effectiveness of VR coordination while allowing for large groups to be immersed in the as-built design for purposes of visualisation and coordination.
+**VRcollab STUDIO 2.0** is a software solution which incorporates the effectiveness of [VR coordination](https://vrcollab.com/lite/#features) while allowing for large groups to be immersed in the as-built design for purposes of visualisation and coordination.
 
 ![VRcollab CAVE](/post-data/VRcollab CAVE.png)
 
-C.A.V.E. System running on VRcollab STUDIO 2.0 would allow for:
+**C.A.V.E. System running on VRcollab STUDIO 2.0 would allow for**:
 
 1. **Automated BIM Conversion** — VRcollab’s core technology allows for large BIM models to be converted accurately and quickly for use in VR and Stereoscopic applications; Tested 5GB in 10 mins
 2. **5 Walled System** — Front, Sides, Overhead and Floor surfaces for projections; creating a truly immersive environment for large groups of audiences
