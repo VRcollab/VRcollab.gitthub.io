@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 
-<meta name="description" content="AEC collaboration in Virtual Reality, VRcollab enables BIM models for use in VDC design reviews, architecture coordination, engineering and construction.">
+<meta name="description" content="{{ .Page.Description }}">
 <title>VRcollab - {{ .Title }}</title>
 {{ partial "head.html" . }}
 <link rel="stylesheet" href='{{ "css/single.css" | absURL }}'>
@@ -17,17 +17,19 @@
         </div>
     </div>
 
-    <div class="container" style="margin-top: 40px;">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <h2 class="display-7 font-weight-normal">{{ .Title }}</h2>
-                {{ .Date.Format "Mon Jan 2, 2006" }}
-                <div class="pt-4 post">
-                    {{ .Content }}
+    <article>
+        <div class="container" style="margin-top: 40px;">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h2 class="display-7 font-weight-normal">{{ .Title }}</h2>
+                    {{ .Date.Format "Mon Jan 2, 2006" }}
+                    <div class="pt-4 post">
+                        {{ .Content }}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </article>
 
     {{ partial "social.html" . }} {{ partial "footer.html" . }}
 </body>
