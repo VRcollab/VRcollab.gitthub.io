@@ -5,10 +5,10 @@
             <p>BIM Software: Revit, Sketchup, Archicad, Navisworks<br> VR Hardware: HTC VIVE, Occulus Rift, Windows MR
             </p>
 
-            <h4 class="display-7 font-weight-normal">Feature and Benefits</h4>
-            <p>Benefits: Depth & Perspective Information, Faster Design Approvals, Intutitive Manipulation of BIM, Minimising
+            <h4 class="display-7 font-weight-normal">Benefits and Features</h4>
+            <p>Depth & Perspective Information, Faster Design Approvals, Intutitive Manipulation of BIM, Minimising
                 Design Errors
-                <br>Features: Measurements, BIM Object Data, Annotations, Daylight Analysis, Render Modes, Merge BIM Models,
+                <br>Measurements, BIM Object Data, Annotations, Daylight Analysis, Render Modes, Merge BIM Models,
                 Multiuser Coordination, Desktop User Friendly</p>
 
             <h4 class="display-7 font-weight-normal">System Requirements (Minimum)</h4>
@@ -19,17 +19,19 @@
                 <a href='{{ "lite" | absURL }}' target="_blank">Learn about VRcollab Lite</a>
             </div>
             <div>
-                <a href="{{ .Site.BaseURL }}lite/#pricing" target="_blank">Learn about pricing</a>
+                <a href="{{ .Site.BaseURL }}lite/#pricing" target="_blank">Learn about Pricing</a>
             </div>
         </div>
         <div class="col-md-6 mb-4">
             <h2 class="display-7 font-weight-normal">Register</h2>
+            <div class="alert alert-danger mt-3" role="alert" id="errorMessage" style="display: none">
+            </div>
             <form id="contactForm" class="needs-validation" novalidate>
                 <div class="form-group">
                     <label for="emailInput">Email address</label>
                     <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
                     <div class="invalid-feedback">
-                        Email is invalid or has been used by other user.
+                        Please provide your email.
                     </div>
                 </div>
                 <div class="form-group">
@@ -60,7 +62,7 @@
                 </div>
                 <div class="form-check mb-3">
                     <input type="checkbox" class="form-check-input" id="tcCheck" required>
-                    <label class="form-check-label" for="tcCheck">I accept the <a href="#">Terms & Conditions and Privacy
+                    <label class="form-check-label" for="tcCheck">I accept the <a href="#">Terms & Conditions</a> and <a href="#">Privacy
                             Policy</a>.</label>
                     <div class="invalid-feedback">
                         You must accept Terms & Conditions and Privacy Policy to continue.
@@ -74,12 +76,38 @@
 </div>
 <script>
     (() => {
+        function setErrorMessage(message) {
+            if (!message) { $("#errorMessage").hide(); }
+            else { $("#errorMessage").html(message); $("#errorMessage").show(); }
+        }
+
         function ajaxRegister() {
             const email = $("#emailInput").val();
             const name = $("#nameInput").val();
             const password = $("#passwordInput").val();
 
-            console.log({ email, name, password });
+            $.ajax({
+                url: "https://auth.api.vrcollab.com/v1/user/register",
+                type: "POST",
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                },
+                contentType: "application/json",
+                data: JSON.stringify({ Email: email, Name: name, Password: password })
+            }).done((data, textStatus, jqXHR) => {
+                console.log(data);
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                const resp = jqXHR.responseJSON;
+                if (resp && resp.Error && resp.Error.indexOf("already exist") != -1) {
+                    setErrorMessage("Email already exists.");
+                    return;
+                }
+                if (resp && resp.Error && resp.Error === "invalid email or password") {
+                    setErrorMessage("Invalid email or password.");
+                    return;
+                }
+                setErrorMessage("Unknown error, please try again.");
+            });
         }
 
         var checkPasswordValidity = () => {
