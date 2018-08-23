@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row mt-4" style="margin-bottom: 40px;">
+        <div class="col-md-8 mx-auto">
+            <h2 class="display-7 font-weight-normal">Register</h2>
+            <form id="contactForm" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="emailInput">Email address</label>
+                    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                    <div class="invalid-feedback">
+                        Please provide your email.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nameInput">Name</label>
+                    <input type="text" class="form-control" id="nameInput" placeholder="name" required>
+                    <div class="invalid-feedback">
+                        Please provide us your name.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nameInput">Password</label>
+                    <input type="text" class="form-control" id="passwordInput" placeholder="password" required>
+                    <div class="invalid-feedback">
+                        Please provide us your name.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nameInput">Confirm password</label>
+                    <input type="text" class="form-control" id="ConfirmpasswordInput" placeholder="Confirm password" required>
+                    <div class="invalid-feedback">
+                        Please provide us your name.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Start 14-Day Trial</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    (() => {
+        function ajaxSendEmail() {
+            const Email = $("#emailInput").val();
+            const Name = $("#nameInput").val();
+            const Message = $("#messageInput").val();
+
+            $.ajax({
+                url: "https://auth.api.vrcollab.com/v1/mailgun/contact_us",
+                type: "POST",
+                headers: {
+                    "Authorization": "Basic YXBpOmtleS0yNzc1MzlhZTAyOWUzODU4MjYzMWJiZmJjODg3MDUwNg==",
+                    "Content-Type": "application/json; charset=utf-8",
+                },
+                contentType: "application/json",
+                data: JSON.stringify({ Email, Name, Message })
+            }).done((data, textStatus, jqXHR) => {
+                alert("An email has been sent to VRcollab team, we will contact you soon!");
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert("Ooops, some error happens. Please try again.");
+            });
+        }
+
+        $("#contactForm").on("submit", ($event) => {
+            $form = $("#contactForm");
+            $event.preventDefault();
+            $event.stopPropagation();
+            $form.addClass("was-validated");
+            if (document.getElementById("contactForm").checkValidity()) {
+                ajaxSendEmail();
+            }
+        });
+    })();
+</script>
