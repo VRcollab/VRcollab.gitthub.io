@@ -168,7 +168,7 @@ if (!doNotTrack) {
             <form id="contactForm" class="needs-validation" novalidate>
                 <div class="form-group">
                     <label for="emailInput">Email address</label>
-                    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                    <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
                     <div class="invalid-feedback">
                         Please provide your email.
                     </div>
