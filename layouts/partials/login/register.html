@@ -1,27 +1,28 @@
 <div class="container">
-    <div class="row mt-4" style="margin-bottom: 40px;">
-        <div class="col-md-6">
-            <h2 class="display-7 font-weight-normal">Supports</h2>
-            <p>BIM Software: Revit, Sketchup, Archicad, Navisworks<br>VR Hardware: HTC VIVE, Occulus Rift, Windows MR</p>
+    <div class="row mt-4">
+        <div class="col-md-6 mb-4">
+            <h4 class="display-7 font-weight-normal">Supports</h4>
+            <p>BIM Software: Revit, Sketchup, Archicad, Navisworks<br> VR Hardware: HTC VIVE, Occulus Rift, Windows MR
+            </p>
 
-            <h2 class="display-7 font-weight-normal">Feature and Benefits</h2>
+            <h4 class="display-7 font-weight-normal">Feature and Benefits</h4>
             <p>Benefits: Depth & Perspective Information, Faster Design Approvals, Intutitive Manipulation of BIM, Minimising
                 Design Errors
                 <br>Features: Measurements, BIM Object Data, Annotations, Daylight Analysis, Render Modes, Merge BIM Models,
                 Multiuser Coordination, Desktop User Friendly</p>
 
-            <h2 class="display-7 font-weight-normal">System Requirements (Minimum)</h2>
+            <h4 class="display-7 font-weight-normal">System Requirements (Minimum)</h4>
             <p>OS: Windows 7 SP1 64 bit (*Windows MR requires Windows 10)<br> GPU: Nvidia GTX 1070 equivalent / Quadro P5000<br>                CPU:
                 Intel i5 equivalent</p>
 
             <div>
-                <a href="#">Learn about VRcollab Lite</a>
+                <a href='{{ "lite" | absURL }}' target="_blank">Learn about VRcollab Lite</a>
             </div>
             <div>
-                <a href="#">Learn about pricing</a>
+                <a href="{{ .Site.BaseURL }}lite/#pricing" target="_blank">Learn about pricing</a>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 mb-4">
             <h2 class="display-7 font-weight-normal">Register</h2>
             <form id="contactForm" class="needs-validation" novalidate>
                 <div class="form-group">
