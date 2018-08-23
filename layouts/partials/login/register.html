@@ -5,7 +5,7 @@
             <form id="contactForm" class="needs-validation" novalidate>
                 <div class="form-group">
                     <label for="emailInput">Email address</label>
-                    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                    <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
                     <div class="invalid-feedback">
                         Please provide your email.
                     </div>
@@ -43,20 +43,20 @@
             const Name = $("#nameInput").val();
             const Message = $("#messageInput").val();
 
-            $.ajax({
-                url: "https://auth.api.vrcollab.com/v1/mailgun/contact_us",
-                type: "POST",
-                headers: {
-                    "Authorization": "Basic YXBpOmtleS0yNzc1MzlhZTAyOWUzODU4MjYzMWJiZmJjODg3MDUwNg==",
-                    "Content-Type": "application/json; charset=utf-8",
-                },
-                contentType: "application/json",
-                data: JSON.stringify({ Email, Name, Message })
-            }).done((data, textStatus, jqXHR) => {
-                alert("An email has been sent to VRcollab team, we will contact you soon!");
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                alert("Ooops, some error happens. Please try again.");
-            });
+            // $.ajax({
+            //     url: "https://auth.api.vrcollab.com/v1/mailgun/contact_us",
+            //     type: "POST",
+            //     headers: {
+            //         "Authorization": "Basic YXBpOmtleS0yNzc1MzlhZTAyOWUzODU4MjYzMWJiZmJjODg3MDUwNg==",
+            //         "Content-Type": "application/json; charset=utf-8",
+            //     },
+            //     contentType: "application/json",
+            //     data: JSON.stringify({ Email, Name, Message })
+            // }).done((data, textStatus, jqXHR) => {
+            //     alert("An email has been sent to VRcollab team, we will contact you soon!");
+            // }).fail(function (jqXHR, textStatus, errorThrown) {
+            //     alert("Ooops, some error happens. Please try again.");
+            // });
         }
 
         $("#contactForm").on("submit", ($event) => {
