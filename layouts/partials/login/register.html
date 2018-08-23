@@ -53,7 +53,18 @@
                         Passwords must match.
                     </div>
                 </div>
-                <p>By creating an account, I accept VRcollab's Terms of Service and Privacy Policy.</p>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="subscribeCheck">
+                    <label class="form-check-label" for="subscribeCheck" style="color: black">Subscribe to our monthly updates which include product
+                        updates, the lastest VDC usecases and methodlogy from industry leaders.</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="tcCheck" required>
+                    <label class="form-check-label" for="tcCheck">I accept the <a href="#">Terms & Conditions and Privacy Policy</a>.</label>
+                    <div class="invalid-feedback">
+                        You must accept Terms & Conditions and Privacy Policy to continue.
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary">Start 14-Day Trial</button>
             </form>
         </div>
