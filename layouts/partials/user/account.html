@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="row mt-4" style="margin-bottom: 40px;">
+        <div class="col-md-8 mx-auto">
+            <h2 class="display-7 font-weight-normal">License details</h2>
+            <p class="mt-2">Your license will expire on <b>Sep 13, 2020</b>.</p>
+            <button class="btn btn-primary" type="submit">Download VRcollab Lite</button>
+            <button class="btn btn-outline-success ml-3" type="submit">Buy License</button>
+            <hr>
+            <h2 class="display-7 font-weight-normal">Account details</h2>
+            <form class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="emailInput">Email address</label>
+                    <input class="form-control" id="emailInput" placeholder="name@example.com" required readonly>
+                </div>
+                <button class="btn btn-danger" type="submit">Logout</button>
+            </form>
+            <hr>
+            <form class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="passwordInput">New Password</label>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="password" pattern=".{10,}" required>
+                    <div class="invalid-feedback">
+                        Password must be at least 10 chars.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmpasswordInput">Confirm password</label>
+                    <input type="password" class="form-control" id="confirmpasswordInput" placeholder="Confirm password" required>
+                    <div class="invalid-feedback">
+                        Passwords must match.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Password</button>
+            </form>
+            <hr>
+            <h2 class="display-7 font-weight-normal">Personal details</h2>
+            <form class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="nameInput">Name</label>
+                    <input type="text" class="form-control" id="nameInput" placeholder="name" required>
+                    <div class="invalid-feedback">
+                        Please provide your name.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="companyInput">Company</label>
+                    <input type="text" class="form-control" id="companyInput" placeholder="company">
+                </div>
+                <div class="form-group">
+                    <label for="industryInput">Industry</label>
+                    <select class="form-control" id="industryInput">
+                        <option value="">N/A</option>
+                        <option value="Architecture">Architecture</option>
+                        <option value="Commercial Interiors">Commercial Interiors</option>
+                        <option value="Construction - Commercial">Construction - Commercial</option>
+                        <option value="Construction - Infrastructure">Construction - Infrastructure</option>
+                        <option value="Construction - Residential">Construction - Residential</option>
+                        <option value="Engineering - Civil">Engineering - Civil</option>
+                        <option value="Engineering - Mechanical">Engineering - Mechanical</option>
+                        <option value="Engineering - Other">Engineering - Other</option>
+                        <option value="Event Planning">Event Planning</option>
+                        <option value="Facilites Management">Facilities Management</option>
+                        <option value="Film and Stage">Film &amp; Stage</option>
+                        <option value="Game Design">Game Design</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Interior Design">Interior Design</option>
+                        <option value="Landscape Architecture">Landscape Architecture</option>
+                        <option value="Law Enforcement and Security">Law Enforcement &amp; Security</option>
+                        <option value="Product Design">Product Design</option>
+                        <option value="Survey">Survey</option>
+                        <option value="Urban Planning">Urban Planning</option>
+                        <option value="Woodworking">Woodworking</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Personal Details</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    (() => {
+        function setErrorMessage(message) {
+            if (!message) { $("#errorMessage").hide(); }
+            else { $("#errorMessage").html(message); $("#errorMessage").show(); }
+        }
+
+        function ajaxSendEmail() {
+            const email = $("#emailInput").val();
+            const password = $("#passwordInput").val();
+
+            $.ajax({
+                url: "https://auth.api.vrcollab.com/v1/user/login",
+                type: "POST",
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                },
+                contentType: "application/json",
+                data: JSON.stringify({ Email: email, Password: password })
+            }).done((data, textStatus, jqXHR) => {
+                if (data && data.Token) {
+                    localStorage.setItem("User", JSON.stringify(data));
+                    setErrorMessage(null);
+                } else {
+                    setErrorMessage("Password is incorrect.");
+                }
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                setErrorMessage("Password is incorrect.");
+            });
+        }
+
+        $("#contactForm").on("submit", ($event) => {
+            $event.preventDefault();
+            $event.stopPropagation();
+            ajaxSendEmail();
+        });
+    })();
+</script>
