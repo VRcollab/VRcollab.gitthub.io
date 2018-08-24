@@ -41,7 +41,8 @@
             }).done((data, textStatus, jqXHR) => {
                 if (data && data.Token) {
                     localStorage.setItem("User", JSON.stringify(data));
-                    setErrorMessage(null);
+                    localStorage.setItem("Token", data.Token);
+                    window.location.href = "/account";
                 } else {
                     setErrorMessage("Password is incorrect.");
                 }
