@@ -2,30 +2,30 @@
     <div class="row mt-4" style="margin-bottom: 40px;">
         <div class="col-md-8 mx-auto">
             <h2 class="display-7 font-weight-normal">License details</h2>
-            <p class="mt-2">Your license will expire on <b>Sep 13, 2020</b>.</p>
-            <button class="btn btn-primary" type="submit">Download VRcollab Lite</button>
+            <p class="mt-2">Your license will expire on <b id="expiredAt">N.A.</b>.</p>
+            <a class="btn btn-primary" href="https://auth.api.vrcollab.com/v1/version/latest-stable?redirect=true" target="_blank">Download VRcollab Lite</a>
             <button class="btn btn-outline-success ml-3" type="submit">Buy License</button>
             <hr>
             <h2 class="display-7 font-weight-normal">Account details</h2>
             <form class="needs-validation" novalidate>
                 <div class="form-group">
                     <label for="emailInput">Email address</label>
-                    <input class="form-control" id="emailInput" placeholder="name@example.com" required readonly>
+                    <input class="form-control" id="email" placeholder="name@example.com" required readonly>
                 </div>
                 <button class="btn btn-danger" type="submit">Logout</button>
             </form>
             <hr>
             <form class="needs-validation" novalidate>
                 <div class="form-group">
-                    <label for="passwordInput">New Password</label>
-                    <input type="password" class="form-control" id="passwordInput" placeholder="password" pattern=".{10,}" required>
+                    <label for="new-password">New Password</label>
+                    <input type="password" class="form-control" id="new-password" placeholder="password" pattern=".{10,}" required>
                     <div class="invalid-feedback">
                         Password must be at least 10 chars.
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="confirmpasswordInput">Confirm password</label>
-                    <input type="password" class="form-control" id="confirmpasswordInput" placeholder="Confirm password" required>
+                    <input type="password" class="form-control" id="confirmpasswordInput" placeholder="confirm password" required>
                     <div class="invalid-feedback">
                         Passwords must match.
                     </div>
@@ -36,19 +36,19 @@
             <h2 class="display-7 font-weight-normal">Personal details</h2>
             <form class="needs-validation" novalidate>
                 <div class="form-group">
-                    <label for="nameInput">Name</label>
-                    <input type="text" class="form-control" id="nameInput" placeholder="name" required>
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="name" required>
                     <div class="invalid-feedback">
                         Please provide your name.
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="companyInput">Company</label>
-                    <input type="text" class="form-control" id="companyInput" placeholder="company">
+                    <label for="company">Company</label>
+                    <input type="text" class="form-control" id="company" placeholder="company">
                 </div>
                 <div class="form-group">
-                    <label for="industryInput">Industry</label>
-                    <select class="form-control" id="industryInput">
+                    <label for="industry">Industry</label>
+                    <select class="form-control" id="industry">
                         <option value="">N/A</option>
                         <option value="Architecture">Architecture</option>
                         <option value="Commercial Interiors">Commercial Interiors</option>
@@ -80,6 +80,35 @@
 </div>
 <script>
     (() => {
+        function checkLogin() {
+            try {
+                const userString = localStorage.getItem("User");
+                if (!userString) return null;
+                const user = JSON.parse(userString);
+                if (!user) return null;
+                if (!user.Email || !user.Name || !user.Token || !user.License) return null;
+                return user;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        const user = checkLogin();
+        if (!user) {
+            window.location.href = "/login";
+            return;
+        }
+
+        ((user) => {
+            $("#expiredAt").html($.format.date(new Date(user.License.ExpiredAt), 'MMM dd, yyyy'));
+            $("#email").val(user.Email);
+            $("#name").val(user.Name);
+            $("#company").val(user.Company);
+            $("#industry").val(user.Industry);
+        })(user);
+
+
+
         function setErrorMessage(message) {
             if (!message) { $("#errorMessage").hide(); }
             else { $("#errorMessage").html(message); $("#errorMessage").show(); }
