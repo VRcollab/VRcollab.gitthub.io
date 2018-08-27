@@ -87,4 +87,8 @@ $.account = new class {
         .then(data => true)
         .catch(data => data);
   }
+
+  verify_email() {
+    return $.http.post('/user/verify_email', {}, this.token())
+  }
 }

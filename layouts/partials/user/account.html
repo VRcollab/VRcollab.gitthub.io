@@ -1,6 +1,9 @@
 <div class="container">
     <div class="row mt-4" style="margin-bottom: 40px;">
         <div class="col-md-8 mx-auto">
+            <div class="alert alert-danger" role="alert" id="verificationAlert" style="display: none">
+                Verify your account email address before you use VRcollab.
+            </div>
             <h2 class="display-7 font-weight-normal">License details</h2>
             <p class="mt-2">Your license will expire on <b id="expiredAt">N.A.</b>.</p>
             <a class="btn btn-primary" href="https://auth.api.vrcollab.com/v1/version/latest-stable?redirect=true" target="_blank">Download
@@ -8,13 +11,14 @@
             <button class="btn btn-outline-success ml-3" type="submit">Buy License</button>
             <hr>
             <h2 class="display-7 font-weight-normal">Account details</h2>
-            <form class="needs-validation" id="logoutForm" novalidate>
-                <div class="form-group">
-                    <label for="emailInput">Email address</label>
-                    <input class="form-control" id="email" placeholder="name@example.com" required readonly>
-                </div>
-                <button class="btn btn-danger" type="submit">Logout</button>
-            </form>
+            <div class="alert alert-success mt-3" role="alert" id="emailUpdateSuccess" style="display: none">
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email address</label>
+                <input class="form-control" id="email" placeholder="name@example.com" required readonly>
+            </div>
+            <button class="btn btn-primary mr-3" id="verificationButton" style="display: none">Resend verification email</button>
+            <button class="btn btn-danger" id="logoutButton">Logout</button>
             <hr>
             <div class="alert alert-success mt-3" role="alert" id="passwordUpdateSuccess" style="display: none"></div>
             <form class="needs-validation" id="passwordForm" novalidate>
@@ -90,6 +94,11 @@
             $("#name").val(data.Name);
             $("#company").val(data.Company);
             $("#industry").val(data.Industry);
+
+            if (!data.EmailVerified) {
+                $("#verificationAlert").show();
+                $("#verificationButton").show();
+            }
         });
 
         function setSuccessMessage(selector, message) {
@@ -97,7 +106,13 @@
             else { $(selector).html(message); $(selector).show(); }
         }
 
-        $("#logoutForm").on("submit", ($event) => {
+        $("#verificationButton").on("click", () => {
+            $.account.verify_email().then(_ => {
+                setSuccessMessage("#emailUpdateSuccess", "A verification email has been sent to your email address");
+            }).catch(_ => window.location.href = "/login");
+        });
+
+        $("#logoutButton").on("click", ($event) => {
             $event.preventDefault();
             $event.stopPropagation();
             $.account.logout();
