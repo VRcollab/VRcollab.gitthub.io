@@ -74,7 +74,7 @@ $.account = new class {
   }
 
   update_password(password) {
-    return $.http.post('/user/password', {Password: password}, this.token())
+    return $.http.patch('/user/password', {Password: password}, this.token())
         .then(data => true)
         .catch(data => data);
   }
