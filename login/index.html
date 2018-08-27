@@ -29,6 +29,7 @@ if (!doNotTrack) {
     <link rel="stylesheet" href='https://vrcollab.com/vendor/css/bootstrap.min.css'>
     <script src='https://vrcollab.com/vendor/js/bootstrap.min.js'></script>
     <script src='https://vrcollab.com/vendor/js/fontawesome.min.js'></script>
+    <script src='https://vrcollab.com/js/account.js'></script>
     <link rel="stylesheet" href='https://vrcollab.com/css/style.css'>
 
     <link rel="apple-touch-icon" sizes="57x57" href='https://vrcollab.com/img/favicon/apple-icon-57x57.png'>
@@ -115,31 +116,27 @@ if (!doNotTrack) {
     </div>
 </nav>
     
+    <div class="hero-image text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://vrcollab.com/img/VRcollab About Us Image.jpg'); height: 250px;">
+    <div class="container" style="color: white; padding-top: 40px;">
+        <img src="https://vrcollab.com/img/vrcollab-logo-single.png" style="width: 80px;">
+        <h1>VRcollab</h1>
+        <p>We make BIM accessible</p>
+    </div>
+</div>
     <div class="container">
     <div class="row mt-4" style="margin-bottom: 40px;">
         <div class="col-md-8 mx-auto">
             <h2 class="display-7 font-weight-normal">Login</h2>
+            <div class="alert alert-danger mt-3" role="alert" id="errorMessage" style="display: none">
+            </div>
             <form id="contactForm" class="needs-validation" novalidate>
                 <div class="form-group">
                     <label for="emailInput">Email address</label>
                     <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
-                    <div class="invalid-feedback">
-                        Please provide your email.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="nameInput">Name</label>
-                    <input type="text" class="form-control" id="nameInput" placeholder="name" required>
-                    <div class="invalid-feedback">
-                        Please provide us your name.
-                    </div>
                 </div>
                 <div class="form-group">
                     <label for="nameInput">Password</label>
-                    <input type="text" class="form-control" id="passwordInput" placeholder="password" required>
-                    <div class="invalid-feedback">
-                        Please provide us your name.
-                    </div>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="password" required>
                 </div>
                 <p style="cursor: pointer">Forget password?</p>
                 <button type="submit" class="btn btn-primary">Login</button>
@@ -149,35 +146,21 @@ if (!doNotTrack) {
 </div>
 <script>
     (() => {
-        function ajaxSendEmail() {
-            const Email = $("#emailInput").val();
-            const Name = $("#nameInput").val();
-            const Message = $("#messageInput").val();
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+        function setErrorMessage(message) {
+            if (!message) { $("#errorMessage").hide(); }
+            else { $("#errorMessage").html(message); $("#errorMessage").show(); }
         }
 
         $("#contactForm").on("submit", ($event) => {
-            $form = $("#contactForm");
             $event.preventDefault();
             $event.stopPropagation();
-            $form.addClass("was-validated");
-            if (document.getElementById("contactForm").checkValidity()) {
-                ajaxSendEmail();
-            }
+
+            const email = $("#emailInput").val();
+            const password = $("#passwordInput").val();
+
+            $.account.login(email, password)
+                .then(data => window.location.href = "/account")
+                .catch(data => setErrorMessage("Password is incorrect."));
         });
     })();
 </script>

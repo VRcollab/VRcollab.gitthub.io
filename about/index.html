@@ -29,6 +29,7 @@ if (!doNotTrack) {
     <link rel="stylesheet" href='https://vrcollab.com/vendor/css/bootstrap.min.css'>
     <script src='https://vrcollab.com/vendor/js/bootstrap.min.js'></script>
     <script src='https://vrcollab.com/vendor/js/fontawesome.min.js'></script>
+    <script src='https://vrcollab.com/js/account.js'></script>
     <link rel="stylesheet" href='https://vrcollab.com/css/style.css'>
 
     <link rel="apple-touch-icon" sizes="57x57" href='https://vrcollab.com/img/favicon/apple-icon-57x57.png'>
@@ -202,14 +203,13 @@ if (!doNotTrack) {
                 url: "https://auth.api.vrcollab.com/v1/mailgun/contact_us",
                 type: "POST",
                 headers: {
-                    "Authorization": "Basic YXBpOmtleS0yNzc1MzlhZTAyOWUzODU4MjYzMWJiZmJjODg3MDUwNg==",
                     "Content-Type": "application/json; charset=utf-8",
                 },
                 contentType: "application/json",
                 data: JSON.stringify({ Email, Name, Message })
             }).done((data, textStatus, jqXHR) => {
                 alert("An email has been sent to VRcollab team, we will contact you soon!");
-            }).fail(function (jqXHR, textStatus, errorThrown) {
+            }).fail((jqXHR, textStatus, errorThrown) => {
                 alert("Ooops, some error happens. Please try again.");
             });
         }
