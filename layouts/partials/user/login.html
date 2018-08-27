@@ -21,8 +21,6 @@
 </div>
 <script>
     (() => {
-        $.account.valid().then(_ => window.location.href = "/account").catch(_ => _);
-
         function setErrorMessage(message) {
             if (!message) { $("#errorMessage").hide(); }
             else { $("#errorMessage").html(message); $("#errorMessage").show(); }
