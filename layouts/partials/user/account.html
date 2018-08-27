@@ -83,29 +83,16 @@
 </div>
 <script>
     (() => {
+
         function updateView() {
-            function checkLogin() {
-                try {
-                    const userString = localStorage.getItem("User");
-                    if (!userString) return null;
-                    const user = JSON.parse(userString);
-                    if (!user) return null;
-                    if (!user.Email || !user.Name || !user.License) return null;
-                    return user;
-                } catch (e) {
-                    return null;
-                }
-            }
-
-            const user = checkLogin();
-            if (!user) { window.location.href = "/login"; }
-
-            $("#expiredAt").html($.format.date(new Date(user.License.ExpiredAt), 'MMM dd, yyyy'));
-            $("#email").val(user.Email);
-            $("#name").val(user.Name);
-            $("#company").val(user.Company);
-            $("#industry").val(user.Industry);
-        };
+            $.account.valid().catch(_ => window.location.href = "/login").then(data => {
+                $("#expiredAt").html($.format.date(new Date(data.License.ExpiredAt), 'MMM dd, yyyy'));
+                $("#email").val(data.Email);
+                $("#name").val(data.Name);
+                $("#company").val(data.Company);
+                $("#industry").val(data.Industry);
+            });
+        }
         updateView();
 
         function setSuccessMessage(message) {
@@ -113,25 +100,10 @@
             else { $("#successMessage").html(message); $("#successMessage").show(); }
         }
 
-        function request(type, url, body) {
-            return new Promise((resolve, reject) => {
-                $.ajax({
-                    url: "https://auth.api.vrcollab.com/v1" + url, type: type,
-                    headers: {
-                        "Authorization": localStorage.getItem("Token"),
-                        "Content-Type": "application/json; charset=utf-8",
-                    },
-                    contentType: "application/json",
-                    data: JSON.stringify(body)
-                }).done(resolve).fail(reject);
-            });
-        }
-
         $("#logoutForm").on("submit", ($event) => {
             $event.preventDefault();
             $event.stopPropagation();
-
-            localStorage.removeItem("User");
+            $.account.logout();
             window.location.href = "/login";
         });
 
@@ -153,15 +125,7 @@
             }
 
             const password = $("#new-password").val();
-
-            request("PATCH", "/user/password", { Password: password })
-                .then((data, textStatus, jqXHR) => {
-                    setSuccessMessage("Password updated.");
-                })
-                .catch((jqXHR, textStatus, errorThrown) => {
-                    localStorage.removeItem("User");
-                    window.location.href = "/login";
-                });
+            $.account.update_password(password).then(_ => updateView()).catch(_ => window.location.href = "/login");
         });
 
         $("#personalForm").on("submit", ($event) => {
@@ -172,16 +136,7 @@
             const company = $("#company").val();
             const industry = $("#industry").val();
 
-            request("PATCH", "/user/profile", { Name: name, Company: company, Industry: industry })
-                .then((data, textStatus, jqXHR) => {
-                    localStorage.setItem("User", JSON.stringify(data));
-                    updateView();
-                    setSuccessMessage("Personal details updated.");
-                })
-                .catch((jqXHR, textStatus, errorThrown) => {
-                    localStorage.removeItem("User");
-                    window.location.href = "/login";
-                });
+            $.account.update_profile(name, company, industry).then(_ => updateView()).catch(_ => window.location.href = "/login");
         });
     })();
 </script>

@@ -21,40 +21,23 @@
 </div>
 <script>
     (() => {
+        $.account.valid().then(_ => window.location.href = "/account").catch(_ => _);
+
         function setErrorMessage(message) {
             if (!message) { $("#errorMessage").hide(); }
             else { $("#errorMessage").html(message); $("#errorMessage").show(); }
         }
 
-        function ajaxSendEmail() {
-            const email = $("#emailInput").val();
-            const password = $("#passwordInput").val();
-
-            $.ajax({
-                url: "https://auth.api.vrcollab.com/v1/user/login",
-                type: "POST",
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                },
-                contentType: "application/json",
-                data: JSON.stringify({ Email: email, Password: password })
-            }).done((data, textStatus, jqXHR) => {
-                if (data && data.Token) {
-                    localStorage.setItem("User", JSON.stringify(data));
-                    localStorage.setItem("Token", data.Token);
-                    window.location.href = "/account";
-                } else {
-                    setErrorMessage("Password is incorrect.");
-                }
-            }).fail((jqXHR, textStatus, errorThrown) => {
-                setErrorMessage("Password is incorrect.");
-            });
-        }
-
         $("#contactForm").on("submit", ($event) => {
             $event.preventDefault();
             $event.stopPropagation();
-            ajaxSendEmail();
+
+            const email = $("#emailInput").val();
+            const password = $("#passwordInput").val();
+
+            $.account.login(email, password)
+                .then(data => window.location.href = "/account")
+                .catch(data => setErrorMessage("Password is incorrect."));
         });
     })();
 </script>
