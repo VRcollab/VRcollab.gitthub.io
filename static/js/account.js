@@ -56,6 +56,11 @@ $.account = new class {
     return localStorage.getItem('Token')
   }
 
+  register(email, name, password) {
+    return $.http.post(
+        '/user/register', {Email: email, Name: name, Password: password});
+  }
+
   login(email, password) {
     return $.http.post('/user/login', {Email: email, Password: password})
         .then(data => {

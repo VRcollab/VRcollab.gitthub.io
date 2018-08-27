@@ -6,10 +6,10 @@
             </p>
 
             <h4 class="display-7 font-weight-normal">Benefits and Features</h4>
-            <p>Depth & Perspective Information, Faster Design Approvals, Intutitive Manipulation of BIM, Minimising
-                Design Errors
-                <br>Measurements, BIM Object Data, Annotations, Daylight Analysis, Render Modes, Merge BIM Models,
-                Multiuser Coordination, Desktop User Friendly</p>
+            <p>Depth & Perspective Information, Faster Design Approvals, Intutitive Manipulation of BIM, Minimising Design
+                Errors
+                <br>Measurements, BIM Object Data, Annotations, Daylight Analysis, Render Modes, Merge BIM Models, Multiuser
+                Coordination, Desktop User Friendly</p>
 
             <h4 class="display-7 font-weight-normal">System Requirements (Minimum)</h4>
             <p>OS: Windows 7 SP1 64 bit (*Windows MR requires Windows 10)<br> GPU: Nvidia GTX 1070 equivalent / Quadro P5000<br>                CPU:
@@ -62,8 +62,9 @@
                 </div>
                 <div class="form-check mb-3">
                     <input type="checkbox" class="form-check-input" id="tcCheck" required>
-                    <label class="form-check-label" for="tcCheck">I accept the <a href="#">Terms & Conditions</a> and <a href="#">Privacy
-                            Policy</a>.</label>
+                    <label class="form-check-label" for="tcCheck">I accept the <a href="#">Terms & Conditions</a> and <a
+                            href="#">Privacy Policy
+                        </a>.</label>
                     <div class="invalid-feedback">
                         You must accept Terms & Conditions and Privacy Policy to continue.
                     </div>
@@ -86,28 +87,21 @@
             const name = $("#nameInput").val();
             const password = $("#passwordInput").val();
 
-            $.ajax({
-                url: "https://auth.api.vrcollab.com/v1/user/register",
-                type: "POST",
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                },
-                contentType: "application/json",
-                data: JSON.stringify({ Email: email, Name: name, Password: password })
-            }).done((data, textStatus, jqXHR) => {
-                console.log(data);
-            }).fail((jqXHR, textStatus, errorThrown) => {
-                const resp = jqXHR.responseJSON;
-                if (resp && resp.Error && resp.Error.indexOf("already exist") != -1) {
-                    setErrorMessage("Email already exists.");
-                    return;
-                }
-                if (resp && resp.Error && resp.Error === "invalid email or password") {
-                    setErrorMessage("Invalid email or password.");
-                    return;
-                }
-                setErrorMessage("Unknown error, please try again.");
-            });
+            $.account.register(email, name, password)
+                .catch(resp => {
+                    if (resp && resp.Error && resp.Error.indexOf("already exist") != -1) {
+                        setErrorMessage("Email already exists.");
+                        return;
+                    }
+                    if (resp && resp.Error && resp.Error === "invalid email or password") {
+                        setErrorMessage("Invalid email or password.");
+                        return;
+                    }
+                    setErrorMessage("Unknown error, please try again.");
+                })
+                .then(_ => $.account.login(email, password))
+                .then(_ => window.location.href = "/account")
+                .catch(_ => { setErrorMessage("Invalid email or password."); })
         }
 
         var checkPasswordValidity = () => {
