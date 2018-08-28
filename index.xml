@@ -27,7 +27,8 @@ This tedious process is further complicated by another two professionals whose r
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vrcollab.com/about/</guid>
-      <description> About - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;about/cover.html&#34; . }} {{ partial &#34;about/company.html&#34; . }} {{ partial &#34;about/form.html&#34; . }} {{ partial &#34;footer.html&#34; . }}  </description>
+      <description>About - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;hero.html&#34; . }} VRcollab is a Singaporean software start-up that is invested by SGinnovate, Entrepreneur First and HTC VIVE. First incorporated in December 2016, VRcollab’s mission is to redefine collaboration and design coordination in the Architecture, Engineering and Construction (AEC) Industry.
+This is possible because of VRcollab’s Core Technology that automatically converts BIM (Building Information Models) for use in Virtual Reality.</description>
     </item>
     
     <item>
@@ -36,7 +37,8 @@ This tedious process is further complicated by another two professionals whose r
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vrcollab.com/account/</guid>
-      <description> Account Overview - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}   {{ partial &#34;header.html&#34; . }} {{ partial &#34;about/cover.html&#34; . }} {{ partial &#34;user/account.html&#34; . }} {{ partial &#34;footer.html&#34; . }}  </description>
+      <description>Account Overview - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}   {{ partial &#34;header.html&#34; . }} {{ partial &#34;hero.html&#34; . }} Verify your account email address before you use VRcollab.  License details Your license will expire on N.A..
+Download VRcollab Lite Buy License  Account details  Email address  Resend verification email Logout   New Password Password must be at least 10 chars.</description>
     </item>
     
     <item>
@@ -54,7 +56,18 @@ This tedious process is further complicated by another two professionals whose r
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vrcollab.com/login/</guid>
-      <description> Login - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;about/cover.html&#34; . }} {{ partial &#34;user/login.html&#34; . }} {{ partial &#34;footer.html&#34; . }}  </description>
+      <description>Login - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;hero.html&#34; . }} Login  Email address  Password  Forget password?
+Login      (() = { function setErrorMessage(message) { if (!message) { $(&#34;#errorMessage&#34;).hide(); } else { $(&#34;#errorMessage&#34;).html(message); $(&#34;#errorMessage&#34;).show(); } } $(&#34;#contactForm&#34;).on(&#34;submit&#34;, ($event) = { $event.preventDefault(); $event.stopPropagation(); const email = $(&#34;#emailInput&#34;).val(); const password = $(&#34;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://vrcollab.com/purchase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vrcollab.com/purchase/</guid>
+      <description> About - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;hero.html&#34; . }} Purchase We are currently building up our payment system. Please contact us.
+   {{ partial &#34;contact.html&#34; . }} {{ partial &#34;footer.html&#34; . }}  </description>
     </item>
     
     <item>
@@ -63,7 +76,8 @@ This tedious process is further complicated by another two professionals whose r
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vrcollab.com/register/</guid>
-      <description> Register - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;about/cover.html&#34; . }} {{ partial &#34;user/register.html&#34; . }} {{ partial &#34;footer.html&#34; . }}  </description>
+      <description>Register - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;hero.html&#34; . }} Supports BIM Software: Revit, Sketchup, Archicad, Navisworks
+VR Hardware: HTC VIVE, Occulus Rift, Windows MR Benefits and Features Depth &amp; Perspective Information, Faster Design Approvals, Intutitive Manipulation of BIM, Minimising Design Errors Measurements, BIM Object Data, Annotations, Daylight Analysis, Render Modes, Merge BIM Models, Multiuser Coordination, Desktop User Friendly</description>
     </item>
     
     <item>

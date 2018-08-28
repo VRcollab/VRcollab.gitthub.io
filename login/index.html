@@ -114,57 +114,57 @@ if (!doNotTrack) {
             </li>
         </ul>
     </div>
-</nav>
-    
-    <div class="hero-image text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://vrcollab.com/img/VRcollab About Us Image.jpg'); height: 250px;">
+</nav> <div class="hero-image text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://vrcollab.com/img/VRcollab About Us Image.jpg'); height: 250px;">
     <div class="container" style="color: white; padding-top: 40px;">
-        <img src="https://vrcollab.com/img/vrcollab-logo-single.png" style="width: 80px;">
+        <img src='https://vrcollab.com/img/vrcollab-logo-single.png' style="width: 80px;">
         <h1>VRcollab</h1>
         <p>We make BIM accessible</p>
     </div>
 </div>
+
     <div class="container">
-    <div class="row mt-4" style="margin-bottom: 40px;">
-        <div class="col-md-8 mx-auto">
-            <h2 class="display-7 font-weight-normal">Login</h2>
-            <div class="alert alert-danger mt-3" role="alert" id="errorMessage" style="display: none">
+        <div class="row mt-4" style="margin-bottom: 40px;">
+            <div class="col-md-8 mx-auto">
+                <h2 class="display-7 font-weight-normal">Login</h2>
+                <div class="alert alert-danger mt-3" role="alert" id="errorMessage" style="display: none">
+                </div>
+                <form id="contactForm" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="emailInput">Email address</label>
+                        <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameInput">Password</label>
+                        <input type="password" class="form-control" id="passwordInput" placeholder="password" required>
+                    </div>
+                    <p style="cursor: pointer">Forget password?</p>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
             </div>
-            <form id="contactForm" class="needs-validation" novalidate>
-                <div class="form-group">
-                    <label for="emailInput">Email address</label>
-                    <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
-                </div>
-                <div class="form-group">
-                    <label for="nameInput">Password</label>
-                    <input type="password" class="form-control" id="passwordInput" placeholder="password" required>
-                </div>
-                <p style="cursor: pointer">Forget password?</p>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
         </div>
     </div>
-</div>
-<script>
-    (() => {
-        function setErrorMessage(message) {
-            if (!message) { $("#errorMessage").hide(); }
-            else { $("#errorMessage").html(message); $("#errorMessage").show(); }
-        }
+    <script>
+        (() => {
+            function setErrorMessage(message) {
+                if (!message) { $("#errorMessage").hide(); }
+                else { $("#errorMessage").html(message); $("#errorMessage").show(); }
+            }
 
-        $("#contactForm").on("submit", ($event) => {
-            $event.preventDefault();
-            $event.stopPropagation();
+            $("#contactForm").on("submit", ($event) => {
+                $event.preventDefault();
+                $event.stopPropagation();
 
-            const email = $("#emailInput").val();
-            const password = $("#passwordInput").val();
+                const email = $("#emailInput").val();
+                const password = $("#passwordInput").val();
 
-            $.account.login(email, password)
-                .then(data => window.location.href = "/account")
-                .catch(data => setErrorMessage("Password is incorrect."));
-        });
-    })();
-</script>
+                $.account.login(email, password)
+                    .then(data => window.location.href = "/account")
+                    .catch(data => setErrorMessage("Password is incorrect."));
+            });
+        })();
+    </script>
 
+    
     <footer class="page-footer font-small blue pt-4 footer">
     <div class="container-fluid text-md-left">
         <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">

@@ -94,6 +94,11 @@ $.account = new class {
   }
 
   verify_email() {
-    return $.http.post('/user/verify_email', {}, this.token())
+    return $.http.post('/user/verify_email', {}, this.token());
+  }
+
+  contact_us(email, name, message) {
+    return $.http.post(
+        '/mailgun/contact_us', {Email: email, Name: name, Message: message});
   }
 }

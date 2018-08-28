@@ -114,120 +114,13 @@ if (!doNotTrack) {
             </li>
         </ul>
     </div>
-</nav>
-    
-    <div class="hero-image text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://vrcollab.com/img/VRcollab About Us Image.jpg'); height: 300px;">
-        <div class="container" style="color: white; padding-top: 40px;">
-            <img src="https://vrcollab.com/img/vrcollab-logo-single.png" style="width: 80px;">
-            <h1>404</h1>
-            <p>Page Not Found</p>
-            <a class="btn btn-primary" href="https://vrcollab.com/">Back to Home</a>
-        </div>
+</nav> <div class="hero-image text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://vrcollab.com/img/VRcollab About Us Image.jpg'); height: 250px;">
+    <div class="container" style="color: white; padding-top: 40px;">
+        <img src='https://vrcollab.com/img/vrcollab-logo-single.png' style="width: 80px;">
+        <h1>VRcollab</h1>
+        <p>We make BIM accessible</p>
     </div>
-    <div class="container" style="margin-top: 40px;">
-    <div class="row">
-        <div class="col-md-8 mx-auto">
-            <p>VRcollab is a Singaporean software start-up that is invested by SGinnovate, Entrepreneur First and HTC VIVE.
-                First incorporated in December 2016, VRcollab’s mission is to redefine collaboration and design coordination
-                in the Architecture, Engineering and Construction (AEC) Industry.</p>
-            <p>This is possible because of VRcollab’s Core Technology that automatically converts BIM (Building Information
-                Models) for use in Virtual Reality. The conversion is done with accuracy and speed ( approx. 4GB BIM converted
-                in 7 Minutes ). VRcollab’s Team expertise in software development and computer graphics also enhances the
-                usability for multiple use-cases.
-            </p>
-            <p>Redefining collaboration in construction, VRcollab takes BIM to the next level, enabling architects, engineers,
-                planners and consultants to communicate seamlessly.</p>
-        </div>
-    </div>
-</div>
-    <div class="container">
-    <div class="row mt-4" style="margin-bottom: 40px;">
-        <div class="col-md-8 mx-auto">
-            <h2 class="display-7 font-weight-normal">Contact Us</h2>
-            <ul class="list-inline social-list-sm">
-                <li class="list-inline-item">
-                    <a href="https://www.facebook.com/VRcollab/" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://twitter.com/vrcollab" target="_blank">
-                        <i class="fab fa-twitter-square"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://www.youtube.com/channel/UCWrdTfVPQLrgeL-8tgbhhzg" target="_blank">
-                        <i class="fab fa-youtube-square"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://www.linkedin.com/company/vrcollab/" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-            </ul>
-            <form id="contactForm" class="needs-validation" novalidate>
-                <div class="form-group">
-                    <label for="emailInput">Email address</label>
-                    <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
-                    <div class="invalid-feedback">
-                        Please provide your email.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="nameInput">Name</label>
-                    <input type="text" class="form-control" id="nameInput" placeholder="name" required>
-                    <div class="invalid-feedback">
-                        Please provide us your name.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="messageInput">Message</label>
-                    <textarea class="form-control" id="messageInput" rows="3" style="min-height: 100px;" required></textarea>
-                    <div class="invalid-feedback">
-                        Please provide us your message.
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
-<script>
-    (() => {
-        function ajaxSendEmail() {
-            const Email = $("#emailInput").val();
-            const Name = $("#nameInput").val();
-            const Message = $("#messageInput").val();
-
-            $.ajax({
-                url: "https://auth.api.vrcollab.com/v1/mailgun/contact_us",
-                type: "POST",
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                },
-                contentType: "application/json",
-                data: JSON.stringify({ Email, Name, Message })
-            }).done((data, textStatus, jqXHR) => {
-                alert("An email has been sent to VRcollab team, we will contact you soon!");
-            }).fail((jqXHR, textStatus, errorThrown) => {
-                alert("Ooops, some error happens. Please try again.");
-            });
-        }
-
-        $("#contactForm").on("submit", ($event) => {
-            $form = $("#contactForm");
-            $event.preventDefault();
-            $event.stopPropagation();
-            $form.addClass("was-validated");
-            if (document.getElementById("contactForm").checkValidity()) {
-                ajaxSendEmail();
-            }
-        });
-    })();
-</script>
-
-    <footer class="page-footer font-small blue pt-4 footer">
+</div> <footer class="page-footer font-small blue pt-4 footer">
     <div class="container-fluid text-md-left">
         <div class="row" style="width: 80%; margin-left: auto; margin-right: auto;">
             <div class="col-md-3 mb-md-0 mb-3">
