@@ -106,6 +106,10 @@ $.account = new class {
         .catch(data => data);
   }
 
+  reset_password(email) {
+    return $.http.post(`/user/reset_password?email=${email}`, {});
+  }
+
   send_verify_email() {
     return $.http.post('/user/verify_email', {}, this.token());
   }
