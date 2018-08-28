@@ -4,8 +4,8 @@ title: VRcollab
 googleAnalytics: UA-124205822-1
 
 params:
-  Register: https://account.vrcollab.com/register
-  Login: https://account.vrcollab.com
+  Register: https://vrcollab.com/register
+  Login: https://vrcollab.com/login
   MainCoverCarousel:
     - img/cover-bg.jpg
     - http://placehold.it/400x300
@@ -85,7 +85,7 @@ params:
   Footer:
     Product:
       - text: Login
-        url: https://account.vrcollab.com
+        url: https://vrcollab.com/login
       - text: Lite
         url: lite
       - text: Studio
