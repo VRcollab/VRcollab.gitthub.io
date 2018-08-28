@@ -1,3 +1,16 @@
+$.query = (sParam) => {
+  var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+      sURLVariables = sPageURL.split('&'), sParameterName, i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split('=');
+
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined ? true : sParameterName[1];
+    }
+  }
+};
+
 $.http = new class {
   constructor() {
     this.baseURL = 'https://auth.api.vrcollab.com/v1';
@@ -49,7 +62,7 @@ $.http = new class {
           .fail((jqXHR => reject(jqXHR)));
     });
   }
-};
+}
 
 $.account = new class {
   token() {
@@ -93,8 +106,12 @@ $.account = new class {
         .catch(data => data);
   }
 
-  verify_email() {
+  send_verify_email() {
     return $.http.post('/user/verify_email', {}, this.token());
+  }
+
+  verify_email(uid, token) {
+    return $.http.get(`/user/verify_email?uid=${uid}&token=${token}`);
   }
 
   contact_us(email, name, message) {

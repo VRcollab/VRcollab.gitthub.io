@@ -89,5 +89,16 @@ VR Hardware: HTC VIVE, Occulus Rift, Windows MR Benefits and Features Depth &amp
       <description> VRcollab Studio - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;studio/cover.html&#34; . }} {{ partial &#34;studio/features.html&#34; . }} {{ partial &#34;studio/gallery.html&#34; . }} {{ partial &#34;pricing.html&#34; . }} {{ partial &#34;social.html&#34; . }} {{ partial &#34;footer.html&#34; . }}   baguetteBox.run(&#39;.tz-gallery&#39;);   </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://vrcollab.com/verify_email/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vrcollab.com/verify_email/</guid>
+      <description>About - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;hero.html&#34; . }}  Your email has been verified.
+Go back to account details   Unknown error occurred.
+Go back to account details     const uid = $.query(&#34;uid&#34;); const token = $.query(&#34;token&#34;); $.account.verify_email(uid, token).then(_ = { $(&#34;#success&#34;).show(); $(&#34;#error&#34;).hide(); }).catch(_ = { });  {{ partial &#34;</description>
+    </item>
+    
   </channel>
 </rss>

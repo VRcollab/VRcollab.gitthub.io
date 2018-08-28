@@ -36,6 +36,10 @@
   </url>
   
   <url>
+    <loc>https://vrcollab.com/verify_email/</loc>
+  </url>
+  
+  <url>
     <loc>https://vrcollab.com/categories/</loc>
     <priority>0</priority>
   </url>
