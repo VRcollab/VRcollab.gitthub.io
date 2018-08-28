@@ -126,6 +126,8 @@ if (!doNotTrack) {
         <div class="row mt-4" style="margin-bottom: 40px;">
             <div class="col-md-8 mx-auto">
                 <h2 class="display-7 font-weight-normal">Login</h2>
+                <div class="alert alert-success mt-3" role="alert" id="successMessage" style="display: none">
+                </div>
                 <div class="alert alert-danger mt-3" role="alert" id="errorMessage" style="display: none">
                 </div>
                 <form id="contactForm" class="needs-validation" novalidate>
@@ -137,7 +139,7 @@ if (!doNotTrack) {
                         <label for="nameInput">Password</label>
                         <input type="password" class="form-control" id="passwordInput" placeholder="password" required>
                     </div>
-                    <p style="cursor: pointer">Forget password?</p>
+                    <p style="cursor: pointer" id="forgetPassword">Forget password?</p>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>
             </div>
@@ -145,10 +147,34 @@ if (!doNotTrack) {
     </div>
     <script>
         (() => {
+            function setSuccessMessage(message) {
+                if (!message) { $("#successMessage").hide(); }
+                else { $("#successMessage").html(message); $("#successMessage").show(); }
+            }
+
             function setErrorMessage(message) {
                 if (!message) { $("#errorMessage").hide(); }
                 else { $("#errorMessage").html(message); $("#errorMessage").show(); }
             }
+
+            $("#forgetPassword").on("click", ($event) => {
+                const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+                const email = $("#emailInput").val();
+
+                if (!re.test(email)) {
+                    setSuccessMessage(null);
+                    setErrorMessage("Email is invalid.");
+                    return
+                }
+
+                $.account.reset_password(email).then(_ => {
+                    setErrorMessage(null);
+                    setSuccessMessage("An email has been sent to your account.");
+                }).catch(_ => {
+                    setSuccessMessage(null);
+                    setErrorMessage("User doesn't exist.");
+                });
+            });
 
             $("#contactForm").on("submit", ($event) => {
                 $event.preventDefault();
