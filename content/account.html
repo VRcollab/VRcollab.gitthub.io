@@ -118,7 +118,7 @@
             }
 
             $("#verificationButton").on("click", () => {
-                $.account.verify_email().then(_ => {
+                $.account.send_verify_email().then(_ => {
                     setSuccessMessage("#emailUpdateSuccess", "A verification email has been sent to your email address");
                 }).catch(_ => window.location.href = "/login");
             });
