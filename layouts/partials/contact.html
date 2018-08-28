@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row mt-4" style="margin-bottom: 40px;">
+        <div class="col-md-8 mx-auto">
+            <h2 class="display-7 font-weight-normal">Contact Us</h2>
+            <ul class="list-inline social-list-sm">
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.Facebook | absURL }}" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.Twitter | absURL }}" target="_blank">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.YouTube | absURL }}" target="_blank">
+                        <i class="fab fa-youtube-square"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ .Site.Params.SocialNetwork.LinkedIn | absURL }}" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+            <form id="contactForm" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="emailInput">Email address</label>
+                    <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
+                    <div class="invalid-feedback">
+                        Please provide your email.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nameInput">Name</label>
+                    <input type="text" class="form-control" id="nameInput" placeholder="name" required>
+                    <div class="invalid-feedback">
+                        Please provide us your name.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="messageInput">Message</label>
+                    <textarea class="form-control" id="messageInput" rows="3" style="min-height: 100px;" required></textarea>
+                    <div class="invalid-feedback">
+                        Please provide us your message.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    (() => {
+        $("#contactForm").on("submit", ($event) => {
+            $form = $("#contactForm");
+            $event.preventDefault();
+            $event.stopPropagation();
+            $form.addClass("was-validated");
+            if (document.getElementById("contactForm").checkValidity()) {
+                const email = $("#emailInput").val();
+                const name = $("#nameInput").val();
+                const message = $("#messageInput").val();
+
+                $.account.contact_us(email, name, message)
+                    .then(_ => { alert("An email has been sent to VRcollab team, we will contact you soon!"); })
+                    .catch(_ => { alert("Ooops, some error happens. Please try again."); });
+            }
+        });
+    })();
+</script>
