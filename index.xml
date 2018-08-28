@@ -6,10 +6,20 @@
     <description>Recent content on VRcollab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Jun 2018 00:16:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 Aug 2018 00:16:00 +0800</lastBuildDate>
     
 	<atom:link href="https://vrcollab.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Best Office Setups for Virtual Design Construction (VDC) Coordination</title>
+      <link>https://vrcollab.com/posts/office-vdc-setup/</link>
+      <pubDate>Mon, 27 Aug 2018 00:16:00 +0800</pubDate>
+      
+      <guid>https://vrcollab.com/posts/office-vdc-setup/</guid>
+      <description>With the growing adoption of BIM (Building Information Modelling) in the last decade, construction methodologies have seen an evolution towards lean construction and integrated project delivery. This entails the need for collaborative software, digitalisation of information, along with new organisational space approaches that are in tune to the Virtual Design Construction (VDC) framework.
+ #1: Co-located BIG Room As construction projects grow increasingly more complex, in both scale and technical specifications.</description>
+    </item>
     
     <item>
       <title>VRcollab STUDIO 2.0: Are CAVEs replacing coordination rooms in Architecture and Construction?</title>
