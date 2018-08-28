@@ -6,11 +6,51 @@
 {{ partial "head.html" . }}
 
 <body>
-    {{ partial "header.html" . }}
-    
-    {{ partial "hero.html" . }}
-    {{ partial "user/login.html" . }}
+    {{ partial "header.html" . }} {{ partial "hero.html" . }}
 
+    <div class="container">
+        <div class="row mt-4" style="margin-bottom: 40px;">
+            <div class="col-md-8 mx-auto">
+                <h2 class="display-7 font-weight-normal">Login</h2>
+                <div class="alert alert-danger mt-3" role="alert" id="errorMessage" style="display: none">
+                </div>
+                <form id="contactForm" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="emailInput">Email address</label>
+                        <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameInput">Password</label>
+                        <input type="password" class="form-control" id="passwordInput" placeholder="password" required>
+                    </div>
+                    <p style="cursor: pointer">Forget password?</p>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        (() => {
+            function setErrorMessage(message) {
+                if (!message) { $("#errorMessage").hide(); }
+                else { $("#errorMessage").html(message); $("#errorMessage").show(); }
+            }
+
+            $("#contactForm").on("submit", ($event) => {
+                $event.preventDefault();
+                $event.stopPropagation();
+
+                const email = $("#emailInput").val();
+                const password = $("#passwordInput").val();
+
+                $.account.login(email, password)
+                    .then(data => window.location.href = "/account")
+                    .catch(data => setErrorMessage("Password is incorrect."));
+            });
+        })();
+    </script>
+
+    <!-- footer -->
     {{ partial "footer.html" . }}
 </body>
 
