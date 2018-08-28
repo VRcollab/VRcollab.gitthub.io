@@ -13,12 +13,12 @@
             <div id="success" class="col-md-8 mx-auto" style="display: none;">
                 <div class="mb-4"><i class="far fa-envelope text-success" style="font-size: 100px;"></i></div>
                 <p>Your email has been verified.</p>
-                <a class="btn btn-primary" href='{{ "account" | absURL }}'>Go back account details</a>
+                <a class="btn btn-primary" href='{{ "account" | absURL }}'>Go back to account details</a>
             </div>
             <div id="error" class="col-md-8 mx-auto">
                 <div class="mb-4"><i class="fas fa-exclamation-triangle text-warning" style="font-size: 100px;"></i></div>
                 <p>Unknown error occurred.</p>
-                <a class="btn btn-primary" href='{{ "account" | absURL }}'>Go back account details</a>
+                <a class="btn btn-primary" href='{{ "account" | absURL }}'>Go back to account details</a>
             </div>
         </div>
     </div>
@@ -30,9 +30,7 @@
         $.account.verify_email(uid, token).then(_ => {
             $("#success").show();
             $("#error").hide();
-        }).catch(_ => {
-
-        });
+        }).catch(_ => { });
     </script>
 
     <!-- footer -->

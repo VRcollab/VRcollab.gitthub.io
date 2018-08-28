@@ -6,7 +6,19 @@
 {{ partial "head.html" . }}
 
 <body>
-    {{ partial "header.html" . }} {{ partial "hero.html" . }} {{ partial "footer.html" . }}
+    {{ partial "header.html" . }} {{ partial "hero.html" . }}
+
+    <div class="container text-center" style="min-height: 400px;">
+        <div class="row" style="padding-top: 60px;">
+            <div class="col-md-8 mx-auto">
+                <div class="mb-4"><i class="fas fa-exclamation-triangle text-warning" style="font-size: 100px;"></i></div>
+                <p>404 Page Not Found.</p>
+                <a class="btn btn-primary" href='{{ "" | absURL }}'>Go back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    {{ partial "footer.html" . }}
 </body>
 
 </html>
