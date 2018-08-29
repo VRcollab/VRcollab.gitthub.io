@@ -16,57 +16,41 @@ $.http = new class {
     this.baseURL = 'https://auth.api.vrcollab.com/v1';
   }
 
-  get(url, token) {
+  _request(method, url, body, token) {
     const headers = {'Content-Type': 'application/json; charset=utf-8'};
     if (token) headers['Authorization'] = token;
+    const request = {
+      url: this.baseURL + url,
+      type: method,
+      headers,
+      contentType: 'application/json'
+    };
+    if (method !== 'GET') request['data'] = JSON.stringify(body);
+
     return new Promise((resolve, reject) => {
-      $.ajax({
-         url: this.baseURL + url,
-         type: 'GET',
-         headers,
-         contentType: 'application/json'
-       })
-          .done((data) => resolve(data))
-          .fail((jqXHR => reject(jqXHR)));
+      $.ajax(request).fail((jqXHR => reject(jqXHR))).done((data) => {
+        if (token) localStorage.setItem('Token', token);
+        resolve(data);
+      });
     });
+  }
+
+  get(url, token) {
+    return this._request('GET', url, null, token);
   }
 
   post(url, body, token) {
-    const headers = {'Content-Type': 'application/json; charset=utf-8'};
-    if (token) headers['Authorization'] = token;
-    return new Promise((resolve, reject) => {
-      $.ajax({
-         url: this.baseURL + url,
-         type: 'POST',
-         headers,
-         contentType: 'application/json',
-         data: JSON.stringify(body)
-       })
-          .done((data) => resolve(data))
-          .fail((jqXHR => reject(jqXHR)));
-    });
+    return this._request('POST', url, body, token);
   }
 
   patch(url, body, token) {
-    const headers = {'Content-Type': 'application/json; charset=utf-8'};
-    if (token) headers['Authorization'] = token;
-    return new Promise((resolve, reject) => {
-      $.ajax({
-         url: this.baseURL + url,
-         type: 'PATCH',
-         headers,
-         contentType: 'application/json',
-         data: JSON.stringify(body)
-       })
-          .done((data) => resolve(data))
-          .fail((jqXHR => reject(jqXHR)));
-    });
+    return this._request('PATCH', url, body, token);
   }
 }
 
 $.account = new class {
   token() {
-    return localStorage.getItem('Token')
+    return localStorage.getItem('Token') || $.query('token');
   }
 
   register(email, name, password) {
