@@ -91,8 +91,11 @@ $.account = new class {
     return $.http.post(`/user/reset_password?email=${email}`, {});
   }
 
-  send_verify_email() {
-    return $.http.post('/user/verify_email', {}, this.token());
+  send_verify_email(email) {
+    return $.http.post(
+        '/user/getOobCodeConfirmEmail',
+        {email, redirectURL: 'https://vrcollab.com/verify_email'},
+        this.token());
   }
 
   verify_email(uid, token) {

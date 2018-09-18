@@ -17,7 +17,8 @@
                 </div>
                 <h2 class="display-7 font-weight-normal">License details</h2>
                 <p class="mt-2">Your license will expire on <b id="expiredAt">N.A.</b>.</p>
-                <a class="btn btn-primary" href="https://auth.api.vrcollab.com/v1/version/latest-stable?redirect=true" target="_blank">Download
+                <a class="btn btn-primary" href="https://auth.api.vrcollab.com/v1/version/latest-stable?redirect=true"
+                    target="_blank">Download
                     VRcollab Lite</a>
                 <a class="btn btn-outline-success ml-3" href='{{ "purchase" | absURL }}'>Buy License</a>
                 <hr>
@@ -28,21 +29,24 @@
                     <label for="emailInput">Email address</label>
                     <input class="form-control" id="email" placeholder="name@example.com" required readonly>
                 </div>
-                <button class="btn btn-primary mr-3" id="verificationButton" style="display: none">Resend verification email</button>
+                <button class="btn btn-primary mr-3" id="verificationButton" style="display: none">Resend verification
+                    email</button>
                 <button class="btn btn-danger" id="logoutButton">Logout</button>
                 <hr>
                 <div class="alert alert-success mt-3" role="alert" id="passwordUpdateSuccess" style="display: none"></div>
                 <form class="needs-validation" id="passwordForm" novalidate>
                     <div class="form-group">
                         <label for="new-password">New Password</label>
-                        <input type="password" class="form-control" id="new-password" placeholder="password" pattern=".{10,}" required>
+                        <input type="password" class="form-control" id="new-password" placeholder="password" pattern=".{10,}"
+                            required>
                         <div class="invalid-feedback">
                             Password must be at least 10 chars.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="confirmpassword">Confirm password</label>
-                        <input type="password" class="form-control" id="confirmpassword" placeholder="confirm password" required>
+                        <input type="password" class="form-control" id="confirmpassword" placeholder="confirm password"
+                            required>
                         <div class="invalid-feedback">
                             Passwords must match.
                         </div>
@@ -118,7 +122,7 @@
             }
 
             $("#verificationButton").on("click", () => {
-                $.account.send_verify_email().then(_ => {
+                $.account.send_verify_email($("#email").val()).then(_ => {
                     setSuccessMessage("#emailUpdateSuccess", "A verification email has been sent to your email address");
                 }).catch(_ => window.location.href = "/login");
             });
