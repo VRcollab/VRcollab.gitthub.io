@@ -24,9 +24,9 @@
     </div>
 
     <script>
-        const OobCode = $.query("oobCode");
+        const oobCode = $.query("oobCode");
 
-        $.account.verify_email(OobCode).then(_ => {
+        $.account.verify_email(oobCode).then(_ => {
             $("#success").show();
             $("#error").hide();
         }).catch(_ => { });

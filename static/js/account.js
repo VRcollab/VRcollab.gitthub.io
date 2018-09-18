@@ -87,14 +87,20 @@ $.account = new class {
         .catch(data => data);
   }
 
-  reset_password(email) {
-    return $.http.post(`/user/getOobCodeResetPassword`, {email,redirectURL: 'https://vrcollab.com/resetPassword' });
+  send_reset_password(email) {
+    return $.http.post(
+        `/user/getOobCodeResetPassword`,
+        {email, redirectURL: 'https://vrcollab.com/reset_password'});
+  }
+
+  reset_password(oobCode, newPassword) {
+    return $.http.post(`/user/resetPassword`, {oobCode, newPassword});
   }
 
   send_verify_email(email) {
     return $.http.post(
         '/user/getOobCodeConfirmEmail',
-        {email, redirectURL: 'https://vrcollab.com/confirmEmail'},
+        {email, redirectURL: 'https://vrcollab.com/confirm_email'},
         this.token());
   }
 
