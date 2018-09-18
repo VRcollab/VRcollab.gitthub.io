@@ -98,8 +98,8 @@ $.account = new class {
         this.token());
   }
 
-  verify_email(uid, token) {
-    return $.http.get(`/user/verify_email?uid=${uid}&token=${token}`);
+  verify_email(oobCode) {
+    return $.http.post(`/user/confirmEmail`, {oobCode});
   }
 
   contact_us(email, name, message) {
