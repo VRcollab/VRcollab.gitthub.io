@@ -13,7 +13,7 @@ $.query = (sParam) => {
 
 $.http = new class {
   constructor() {
-    this.baseURL = 'https://auth.api.vrcollab.com/v1';
+    this.baseURL = 'https://auth-api.vrcollab.com/v2';
   }
 
   _request(method, url, body, token) {
@@ -54,12 +54,11 @@ $.account = new class {
   }
 
   register(email, name, password) {
-    return $.http.post(
-        '/user/register', {Email: email, Name: name, Password: password});
+    return $.http.post('/user/signupNewUser', {email, name, password});
   }
 
   login(email, password) {
-    return $.http.post('/user/login', {Email: email, Password: password})
+    return $.http.post('/user/verifyPassword', {email, password})
         .then(data => {
           localStorage.setItem('Token', data.Token);
           return data;
@@ -72,20 +71,18 @@ $.account = new class {
   }
 
   valid() {
-    return $.http.get('/user/profile', this.token());
+    return $.http.post('/user/getAccountInfo', {}, this.token());
   }
 
   update_password(password) {
-    return $.http.patch('/user/password', {Password: password}, this.token())
-        .then(data => true)
+    return $.http.post('/user/setAccountInfo', {password}, this.token())
+        .then(data => localStorage.setItem('Token', data.Token))
         .catch(data => data);
   }
 
   update_profile(name, company, industry) {
     return $.http
-        .patch(
-            '/user/profile', {Name: name, Company: company, Industry: industry},
-            this.token())
+        .post('/user/setAccountInfo', {name, company, industry}, this.token())
         .then(data => true)
         .catch(data => data);
   }
@@ -104,6 +101,6 @@ $.account = new class {
 
   contact_us(email, name, message) {
     return $.http.post(
-        '/mailgun/contact_us', {Email: email, Name: name, Message: message});
+        '/message/contactUs', {Email: email, Name: name, Message: message});
   }
 }
