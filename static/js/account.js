@@ -88,13 +88,13 @@ $.account = new class {
   }
 
   reset_password(email) {
-    return $.http.post(`/user/reset_password?email=${email}`, {});
+    return $.http.post(`/user/getOobCodeResetPassword`, {email,redirectURL: 'https://vrcollab.com/resetPassword' });
   }
 
   send_verify_email(email) {
     return $.http.post(
         '/user/getOobCodeConfirmEmail',
-        {email, redirectURL: 'https://vrcollab.com/verify_email'},
+        {email, redirectURL: 'https://vrcollab.com/confirmEmail'},
         this.token());
   }
 
