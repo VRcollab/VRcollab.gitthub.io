@@ -125,22 +125,33 @@ if (!doNotTrack) {
     <div class="container">
         <div class="row mt-4" style="margin-bottom: 40px;">
             <div class="col-md-8 mx-auto">
-                <h2 class="display-7 font-weight-normal">Login</h2>
+                <h2 class="display-7 font-weight-normal">Reset Password</h2>
                 <div class="alert alert-success mt-3" role="alert" id="successMessage" style="display: none">
                 </div>
                 <div class="alert alert-danger mt-3" role="alert" id="errorMessage" style="display: none">
                 </div>
-                <form id="loginForm" class="needs-validation" novalidate>
+                <form id="resetPasswordForm" class="needs-validation" novalidate>
                     <div class="form-group">
-                        <label for="emailInput">Email address</label>
-                        <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
+                        <label for="oobCode">Password reset code</label>
+                        <input class="form-control" id="oobCode" disabled>
                     </div>
                     <div class="form-group">
-                        <label for="nameInput">Password</label>
-                        <input type="password" class="form-control" id="passwordInput" placeholder="password" required>
+                        <label for="new-password">New Password</label>
+                        <input type="password" class="form-control" id="new-password" placeholder="password" pattern=".{10,}"
+                            required>
+                        <div class="invalid-feedback">
+                            Password must be at least 10 chars.
+                        </div>
                     </div>
-                    <p style="cursor: pointer" id="forgetPassword">Forget password?</p>
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="form-group">
+                        <label for="confirmpassword">Confirm password</label>
+                        <input type="password" class="form-control" id="confirmpassword" placeholder="confirm password"
+                            required>
+                        <div class="invalid-feedback">
+                            Passwords must match.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Reset</button>
                 </form>
             </div>
         </div>
@@ -157,35 +168,35 @@ if (!doNotTrack) {
                 else { $("#errorMessage").html(message); $("#errorMessage").show(); }
             }
 
-            $("#forgetPassword").on("click", ($event) => {
-                const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-                const email = $("#emailInput").val();
+            const oobCode = $.query("oobCode");
+            if (!oobCode) window.location.href = "/login";
+            $("#oobCode").val(oobCode);
 
-                if (!re.test(email)) {
-                    setSuccessMessage(null);
-                    setErrorMessage("Email is invalid.");
-                    return
-                }
-
-                $.account.send_reset_password(email).then(_ => {
-                    setErrorMessage(null);
-                    setSuccessMessage("An email has been sent to your account.");
-                }).catch(_ => {
-                    setSuccessMessage(null);
-                    setErrorMessage("User doesn't exist.");
-                });
-            });
-
-            $("#loginForm").on("submit", ($event) => {
+            $("#resetPasswordForm").on("submit", ($event) => {
+                $form = $("#resetPasswordForm");
                 $event.preventDefault();
                 $event.stopPropagation();
 
-                const email = $("#emailInput").val();
-                const password = $("#passwordInput").val();
+                if ($("#new-password").val() != $("#confirmpassword").val()) {
+                    document.getElementById("confirmpassword").setCustomValidity("Passwords must match.");
+                }
+                else {
+                    document.getElementById("confirmpassword").setCustomValidity("");
+                }
 
-                $.account.login(email, password)
-                    .then(data => window.location.href = "/account")
-                    .catch(data => setErrorMessage("Password is incorrect."));
+                $form.addClass("was-validated");
+                if (!document.getElementById("resetPasswordForm").checkValidity()) {
+                    return;
+                }
+
+                const password = $("#new-password").val();
+
+                $.account.reset_password(oobCode, password)
+                    .then(_ => {
+                        setSuccessMessage("Password updated");
+                        setTimeout(() => { window.location.href = "/login"; }, 3000);
+                    })
+                    .catch(data => setErrorMessage(data.responseJSON.Error));
             });
         })();
     </script>

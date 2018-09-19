@@ -13,7 +13,7 @@ $.query = (sParam) => {
 
 $.http = new class {
   constructor() {
-    this.baseURL = 'https://auth.api.vrcollab.com/v1';
+    this.baseURL = 'https://auth-api.vrcollab.com/v2';
   }
 
   _request(method, url, body, token) {
@@ -54,12 +54,11 @@ $.account = new class {
   }
 
   register(email, name, password) {
-    return $.http.post(
-        '/user/register', {Email: email, Name: name, Password: password});
+    return $.http.post('/user/signupNewUser', {email, name, password});
   }
 
   login(email, password) {
-    return $.http.post('/user/login', {Email: email, Password: password})
+    return $.http.post('/user/verifyPassword', {email, password})
         .then(data => {
           localStorage.setItem('Token', data.Token);
           return data;
@@ -72,38 +71,45 @@ $.account = new class {
   }
 
   valid() {
-    return $.http.get('/user/profile', this.token());
+    return $.http.post('/user/getAccountInfo', {}, this.token());
   }
 
   update_password(password) {
-    return $.http.patch('/user/password', {Password: password}, this.token())
-        .then(data => true)
+    return $.http.post('/user/setAccountInfo', {password}, this.token())
+        .then(data => localStorage.setItem('Token', data.Token))
         .catch(data => data);
   }
 
   update_profile(name, company, industry) {
     return $.http
-        .patch(
-            '/user/profile', {Name: name, Company: company, Industry: industry},
-            this.token())
+        .post('/user/setAccountInfo', {name, company, industry}, this.token())
         .then(data => true)
         .catch(data => data);
   }
 
-  reset_password(email) {
-    return $.http.post(`/user/reset_password?email=${email}`, {});
+  send_reset_password(email) {
+    return $.http.post(
+        `/user/getOobCodeResetPassword`,
+        {email, redirectURL: 'https://vrcollab.com/reset_password'});
   }
 
-  send_verify_email() {
-    return $.http.post('/user/verify_email', {}, this.token());
+  reset_password(oobCode, newPassword) {
+    return $.http.post(`/user/resetPassword`, {oobCode, newPassword});
   }
 
-  verify_email(uid, token) {
-    return $.http.get(`/user/verify_email?uid=${uid}&token=${token}`);
+  send_verify_email(email) {
+    return $.http.post(
+        '/user/getOobCodeConfirmEmail',
+        {email, redirectURL: 'https://vrcollab.com/confirm_email'},
+        this.token());
+  }
+
+  verify_email(oobCode) {
+    return $.http.post(`/user/confirmEmail`, {oobCode});
   }
 
   contact_us(email, name, message) {
     return $.http.post(
-        '/mailgun/contact_us', {Email: email, Name: name, Message: message});
+        '/message/contactUs', {Email: email, Name: name, Message: message});
   }
 }

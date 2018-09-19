@@ -138,10 +138,9 @@ if (!doNotTrack) {
     </div>
 
     <script>
-        const uid = $.query("uid");
-        const token = $.query("token");
+        const oobCode = $.query("oobCode");
 
-        $.account.verify_email(uid, token).then(_ => {
+        $.account.verify_email(oobCode).then(_ => {
             $("#success").show();
             $("#error").hide();
         }).catch(_ => { });

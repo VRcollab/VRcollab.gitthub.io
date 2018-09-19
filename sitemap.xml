@@ -21,6 +21,10 @@
   </url>
   
   <url>
+    <loc>https://vrcollab.com/confirm_email/</loc>
+  </url>
+  
+  <url>
     <loc>https://vrcollab.com/lite/</loc>
   </url>
   
@@ -37,11 +41,11 @@
   </url>
   
   <url>
-    <loc>https://vrcollab.com/studio/</loc>
+    <loc>https://vrcollab.com/reset_password/</loc>
   </url>
   
   <url>
-    <loc>https://vrcollab.com/verify_email/</loc>
+    <loc>https://vrcollab.com/studio/</loc>
   </url>
   
   <url>
