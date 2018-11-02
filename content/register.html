@@ -113,6 +113,7 @@
                         setErrorMessage("Unknown error, please try again.");
                     })
                     .then(_ => $.account.login(email, password))
+                    .then(_ => $.account.send_verify_email(email))
                     .then(_ => window.location.href = "/account")
                     .catch(_ => { setErrorMessage("Invalid email or password."); })
             }
