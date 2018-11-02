@@ -19,6 +19,8 @@ params:
       src: img/sketchup-logo.png
     - name: ArchiCAD
       src: img/archicad-logo.png
+    - name: Rhino3D
+      src: img/rhino3d-logo.png
     - name: Navisworks
       src: img/navisworks-logo.png
     - name: HTC Vive
