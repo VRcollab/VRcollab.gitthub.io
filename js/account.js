@@ -17,7 +17,7 @@ $.http = new class {
   }
 
   _request(method, url, body, token) {
-    const headers = {'Content-Type': 'application/json; charset=utf-8'};
+    const headers = {'Content-Type': 'application/json; charset=utf-8', 'VRcollab-Request-Permanent': 'true'};
     if (token) headers['Authorization'] = token;
     const request = {
       url: this.baseURL + url,
