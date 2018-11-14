@@ -78,7 +78,7 @@ params:
     Learn:
       - text: Blog
         url: https://blog.vrcollab.com
-      - text: Helping Center
+      - text: Help Center
         url: https://help.vrcollab.com/
       - text: FAQ
         url: https://help.vrcollab.com/hc/en-us/sections/115000637574-5-General-FAQ
@@ -97,7 +97,7 @@ params:
     Learn:
       - text: Blog
         url: https://blog.vrcollab.com
-      - text: Helping Center
+      - text: Help Center
         url: https://help.vrcollab.com/
       - text: FAQ
         url: https://help.vrcollab.com/hc/en-us/sections/115000637574-5-General-FAQ
