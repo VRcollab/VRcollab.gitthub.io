@@ -6,10 +6,22 @@
     <description>Recent content on VRcollab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Aug 2018 00:16:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Nov 2018 00:16:00 +0800</lastBuildDate>
     
 	<atom:link href="https://vrcollab.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BIM Integrations, Colour Markups &amp; VDC Coordination — VRcollab v0.9.10</title>
+      <link>https://vrcollab.com/posts/v0.9.10/</link>
+      <pubDate>Wed, 14 Nov 2018 00:16:00 +0800</pubDate>
+      
+      <guid>https://vrcollab.com/posts/v0.9.10/</guid>
+      <description>New BIM &amp;amp; Format Import Integrations Added: Revit 2019 , Navisworks 18, Archicad 22 (Beta), Direct OBJ Import
+Supported as of v0.9.10: Revit(2014–2019), Sketchup(2016–2018), Archicad(21–22), Rhino3D 6, Navisworks 18, OBJ
+Formats Merge Feature: For eg. Archicad and Revit Models merged in VRcollab, with ability to access full data from both softwares for purposes of BIM VR coordination.
+3D scan  Point Cloud Data  OBJ  VRcollab Import Direct OBJ imports allow for 3D scanned terrain or building to be imported into VRcollab for merging with any of the above integrated formats.</description>
+    </item>
     
     <item>
       <title>Best Office Setups for Virtual Design Construction (VDC) Coordination</title>
