@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /account
+Disallow: /confirm_email
+Disallow: /reset_password
