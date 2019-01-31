@@ -47,13 +47,29 @@ html, body {
   height: 274px;
 }
 
-.offers-hero {
-  font-style: normal;
-}
-
 .offers-hero .container{
   padding-top: 40px;
   padding-bottom: 40px;
   color: white;
   min-height: 100%;
+}
+
+
+.offer-preview img {
+  width: 100%;
+}
+
+.offer-preview-row img {
+  border: solid;
+  border-width: 1px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.offer-preview-col{
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#vr-bep-guide-cal{
+  background-image: url('/post-data/why-vr-in-BEP-post/LANDING PAGE Copy 2.png');
 }
