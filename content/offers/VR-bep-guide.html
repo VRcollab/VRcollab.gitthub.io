@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<meta name="description" content="VRcollab’s Core Technology that automatically converts BIM (Building Information Models) for use in Virtual Reality with speed and accuracy (7GB in 10 Minutes).">
+<title>Incorporate VR into your BEP</title>
+{{ partial "head.html" . }}
+
+<body>
+    {{ partial "header.html" . }}
+    <div id="vr-bep-guide" class="offers-hero hero-image text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8 mx-auto">
+            <div class="row">
+              <div class="col-md-7 mx-auto">
+                <h3>Incorporate Virtual Reality <br/> into your BIM Execution Plan</h3>
+                <p>Regardless of project phase and role</p>
+                <button type="button" class="btn btn-warning">Download Guide</button>
+              </div>
+              <div class="col-md-5 mx-auto">
+                <img class='offer-img' src="/post-data/why-vr-in-BEP-post/VRcollab BEP Front Cover Mockup.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 40px;">
+        <div class="row">
+            <div class="col-md-8 col-lg-8 mx-auto">
+                <h3>
+                  Increasing trend of VR in Tender Requirements.
+                </h3>
+                <p>
+                  There has been an increase in Tender Requirements that stipulate Virtual Reality (VR) to be adopted in the direction of Virtual Design and Construction (VDC), without which, a company will be greatly disadvantaged, if not completely excluded from competing for such projects.
+                </p>
+                <h3>
+                  How to incorporate Virtual Reality into BIM execution Plan
+                </h3>
+                <p>
+                  Allow us to assist you with the VRcollab Virtual Reality (VR) BIM Execution Plan, where we have distilled the most critical aspects of VR that will be crucial in making your BEP relevant for 2019 and beyond.
+                </p>
+                <p>
+                  Comes complete with Project Workflows, Life cycle Utilisation, Hardware Specifications, Flowcharts and more!
+                </p>
+                <p>
+                  Best of all it is absolutely FREE, so get yours now!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-4" style="margin-bottom: 40px;">
+            <div class="col-md-8 mx-auto">
+                <h2 class="display-7 font-weight-normal">Download the Guide</h2>
+                <ul class="list-inline social-list-sm">
+                    <li class="list-inline-item">
+                        <a href="{{ .Site.Params.SocialNetwork.Facebook | absURL }}" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="{{ .Site.Params.SocialNetwork.Twitter | absURL }}" target="_blank">
+                            <i class="fab fa-twitter-square"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="{{ .Site.Params.SocialNetwork.YouTube | absURL }}" target="_blank">
+                            <i class="fab fa-youtube-square"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="{{ .Site.Params.SocialNetwork.LinkedIn | absURL }}" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+                <form id="contactForm" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="emailInput">Email address</label>
+                        <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
+                        <div class="invalid-feedback">
+                            Please provide your email.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameInput">Name</label>
+                        <input type="text" class="form-control" id="nameInput" placeholder="name" required>
+                        <div class="invalid-feedback">
+                            Please provide us your name.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="messageInput">Message</label>
+                        <textarea class="form-control" id="messageInput" rows="3" style="min-height: 100px;" required></textarea>
+                        <div class="invalid-feedback">
+                            Please provide us your message.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        (() => {
+            $("#contactForm").on("submit", ($event) => {
+                $form = $("#contactForm");
+                $event.preventDefault();
+                $event.stopPropagation();
+                $form.addClass("was-validated");
+                if (document.getElementById("contactForm").checkValidity()) {
+                    const email = $("#emailInput").val();
+                    const name = $("#nameInput").val();
+                    const message = $("#messageInput").val();
+
+                    $.account.contact_us(email, name, message)
+                        .then(_ => { alert("An email has been sent to VRcollab team, we will contact you soon!"); })
+                        .catch(_ => { alert("Ooops, some error happens. Please try again."); });
+                }
+            });
+        })();
+    </script>
+
+   {{ partial "footer.html" . }}
+</body>
+
+</html>

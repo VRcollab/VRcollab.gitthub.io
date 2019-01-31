@@ -1,3 +1,6 @@
+html, body {
+  height: 100%;
+}
 .cover {
     background: #202020;
     color: white;
@@ -35,4 +38,22 @@
 
 .baguetteBox-button {
     background-color: transparent !important;
+}
+#vr-bep-guide {
+  background-image: url('/post-data/why-vr-in-BEP-post/LANDING PAGE Copy.png');
+}
+
+.offers-hero .offer-img{
+  height: 274px;
+}
+
+.offers-hero {
+  font-style: normal;
+}
+
+.offers-hero .container{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: white;
+  min-height: 100%;
 }
