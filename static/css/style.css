@@ -73,3 +73,18 @@ html, body {
 #vr-bep-guide-cal{
   background-image: url('/post-data/why-vr-in-BEP-post/LANDING PAGE Copy 2.png');
 }
+
+img.vr-bep-preview{
+  max-width: 250px;
+}
+
+#offer-form input, #offer-form textarea{
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border-color: white;
+}
+#offer-form input::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
+#offer-form input:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
+#offer-form input::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
+#offer-form input:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
+#offer-form input::-ms-input-placeholder { color: white; }  /* Microsoft Edge */
