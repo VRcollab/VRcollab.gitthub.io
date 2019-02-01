@@ -78,13 +78,13 @@ img.vr-bep-preview{
   max-width: 250px;
 }
 
-#offer-form input, #offer-form textarea{
+#mc_embed_signup input, #mc_embed_signup textarea{
   background: rgba(255,255,255,0.2);
   color: white;
   border-color: white;
 }
-#offer-form input::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
-#offer-form input:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
-#offer-form input::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
-#offer-form input:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
-#offer-form input::-ms-input-placeholder { color: white; }  /* Microsoft Edge */
+#mc_embed_signup input::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
+#mc_embed_signup input:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
+#mc_embed_signup input::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
+#mc_embed_signup input:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
+#mc_embed_signup input::-ms-input-placeholder { color: white; }  /* Microsoft Edge */
