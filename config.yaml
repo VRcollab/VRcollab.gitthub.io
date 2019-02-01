@@ -78,8 +78,6 @@ params:
     Learn:
       - text: Blog
         url: https://blog.vrcollab.com
-      - text: Certified Professionals
-        url: certified-professionals
       - text: Help Center
         url: https://help.vrcollab.com/
       - text: FAQ
@@ -99,8 +97,6 @@ params:
     Learn:
       - text: Blog
         url: https://blog.vrcollab.com
-      - text: Certified Professionals
-        url: certified-professionals
       - text: Help Center
         url: https://help.vrcollab.com/
       - text: FAQ
