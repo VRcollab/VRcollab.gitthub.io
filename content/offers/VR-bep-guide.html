@@ -95,7 +95,7 @@
 
 
   <div id="vr-bep-guide-cal" class="hero-image offer-preview">
-    <div class="container py-4 text-white">
+    <div class="container py-4 text-white text-center text-md-left">
       <div class="row">
         <div class="col-md-8 mx-auto">
 
@@ -165,7 +165,7 @@
         const name = $("#nameInput").val();
         const job = $("#jobInput").val();
 
-        $.account.contact_us(email, name, message)
+        $.account.offer_email(email, name, job, "vr-bep-guide")
         .then(_ => { alert("We will send you an email to download the VR BEP guide!"); })
         .catch(_ => { alert("Ooops, some error happens. Please try again."); });
       }
