@@ -8,16 +8,107 @@
 <body>
     {{ partial "header.html" . }} {{ partial "hero.html" . }}
 
-    <div class="container" style="margin-top: 40px;">
+    <!-- <div class="container" style="margin-top: 40px;">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2 class="display-7 font-weight-normal">Purchase</h2>
-                <p>We are currently building up our payment system. Please contact us.</p>
+                <p>Please provide us your details. Our sales person will contact you in 24 hours.</p>
+            </div>
+        </div>
+    </div> -->
+    
+    <div class="container">
+        <div class="row mt-4" style="margin-bottom: 40px;">
+            <div class="col-md-8 mx-auto">
+                <h2 class="display-7 font-weight-normal">Request for Quotation</h2>
+                <form id="contactForm" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="industry">Product</label>
+                        <select class="form-control" id="productInput" required>
+                            <option value="VRcollab Lite">VRcollab Lite</option>
+                            <option value="VRcollab Studio">VRcollab Studio</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameInput">Quantity</label>
+                        <input type="number" class="form-control" id="quantityInput" placeholder="1" value="2" required>
+                        <div class="invalid-feedback">
+                            Please let us know the quantity you are requesting.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameInput">Name</label>
+                        <input type="text" class="form-control" id="nameInput" placeholder="name" required>
+                        <div class="invalid-feedback">
+                            Please provide us your name.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameInput">Company</label>
+                        <input type="text" class="form-control" id="companyInput" placeholder="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Email address</label>
+                        <input class="form-control" id="emailInput" placeholder="name@example.com" pattern='\S+@\S+\.\S+' required>
+                        <div class="invalid-feedback">
+                            Please provide your email.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nameInput">Contact Number</label>
+                        <input type="text" class="form-control" id="numberInput" placeholder="contact number" required>
+                        <div class="invalid-feedback">
+                            Please provide us your contact number.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="messageInput">Additional Notes</label>
+                        <textarea class="form-control" id="messageInput" rows="3" style="min-height: 100px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
     </div>
+    <script>
+        (() => {
+            $("#contactForm").on("submit", ($event) => {
+                $form = $("#contactForm");
+                $event.preventDefault();
+                $event.stopPropagation();
+                $form.addClass("was-validated");
+                if (document.getElementById("contactForm").checkValidity()) {
+                    const product = $("#productInput").val();
+                    const quantity = $("#quantityInput").val();
+                    const name = $("#nameInput").val();
+                    const company = $("#companyInput").val();
+                    const email = $("#emailInput").val();
+                    const number = $("#numberInput").val();
+                    const message = $("#messageInput").val();
+
+                    const content = `
+Request for Quotation:
+
+Product: ${product}
+Quantity: ${quantity}
+
+Name: ${name}
+Company: ${company}
+Email: ${email}
+Contact Number: ${number}
+
+Additional Notes:
+${message}`;
+
+                    $.account.contact_us(email, name, content)
+                        .then(_ => { alert("An email has been sent to VRcollab team, we will contact you soon!"); })
+                        .catch(_ => { alert("Ooops, some error happens. Please try again."); });
+                }
+            });
+        })();
+    </script>
     
-    {{ partial "contact.html" . }} {{ partial "footer.html" . }}
+    {{ partial "footer.html" . }}
 </body>
 
 </html>
