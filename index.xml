@@ -118,8 +118,8 @@ Login      (() = { function setSuccessMessage(message) { if (!message) { $(&#34;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vrcollab.com/purchase/</guid>
-      <description> About - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;hero.html&#34; . }} Purchase We are currently building up our payment system. Please contact us.
-   {{ partial &#34;contact.html&#34; . }} {{ partial &#34;footer.html&#34; . }}  </description>
+      <description>About - BIM and VDC Coordination in Virtual Reality {{ partial &#34;head.html&#34; . }}  {{ partial &#34;header.html&#34; . }} {{ partial &#34;hero.html&#34; . }} Purchase Please provide us your details. Our sales person will contact you in 24 hours.
+   -- Request for Quotation Product VRcollab Lite VRcollab Studio   Quantity Please let us know the quantity you are requesting.   Name Please provide us your name.</description>
     </item>
     
     <item>
