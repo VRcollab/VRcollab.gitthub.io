@@ -115,6 +115,6 @@ $.account = new class {
 
   offer_email_collect(email, name, job, offer_name) {
     return $.http.post(
-        '/message/contactUs', {Email: email, Name: name, job: job, offer_name});
+        '/message/offerEmails', {Email: email, Name: name, job: job, offer_name});
   }
 }
