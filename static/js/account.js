@@ -113,8 +113,8 @@ $.account = new class {
         '/message/contactUs', {Email: email, Name: name, Message: message});
   }
 
-  offer_email_collect(email, name, job, offer_name) {
+  offer_email_collect(email, name, job) {
     return $.http.post(
-        '/message/offerEmails', {Email: email, Name: name, job: job, offer_name});
+        '/message/sendgridTemplate', {To: {Email: email, Name: name, Custom: {job: job}}, TemplateID: "d-40b9216e03c74f2d942e6a2b3bc529e5"} );
   }
 }
