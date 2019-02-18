@@ -6,10 +6,22 @@
     <description>Recent content in Posts on VRcollab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Nov 2018 00:16:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Feb 2019 00:12:00 +0800</lastBuildDate>
     
 	<atom:link href="https://vrcollab.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Connect to your Stakeholders in 3 Easy Steps! Plus Mini-maps, Gridlines and more - VRcollab LITE v0.10.0</title>
+      <link>https://vrcollab.com/posts/v0.10.0/</link>
+      <pubDate>Mon, 18 Feb 2019 00:12:00 +0800</pubDate>
+      
+      <guid>https://vrcollab.com/posts/v0.10.0/</guid>
+      <description>In version v0.10.0, we have completely reiterated the design of the launcher, with a more focused workflow centred around stakeholder collaboration and data communication.
+Does your VRcollab Launcher look different? Don&amp;rsquo;t fret!
+Also introducing multi-language support, starting with our Mandarin Language support, with many other languages coming in the next few months.
+Multiuser Internet Coordination One key feature we are proud of is the ease at which the new launcher enables users to host or join coordination meetings with stakeholders from around the world in a couple of easy steps:</description>
+    </item>
     
     <item>
       <title>BIM Integrations, Colour Markups &amp; VDC Coordination — VRcollab v0.9.10</title>
@@ -21,18 +33,6 @@
 Supported as of v0.9.10: Revit(2014–2019), Sketchup(2016–2018), Archicad(21–22), Rhino3D 6, Navisworks 18, OBJ
 Formats Merge Feature: For eg. Archicad and Revit Models merged in VRcollab, with ability to access full data from both softwares for purposes of BIM VR coordination.
 3D scan  Point Cloud Data  OBJ  VRcollab Import Direct OBJ imports allow for 3D scanned terrain or building to be imported into VRcollab for merging with any of the above integrated formats.</description>
-    </item>
-    
-    <item>
-      <title>Connect to your Stakeholders in 3 Easy Steps! Plus Mini-maps, Gridlines and more - VRcollab LITE v0.10.0</title>
-      <link>https://vrcollab.com/posts/v0.10.0/</link>
-      <pubDate>Wed, 14 Nov 2018 00:16:00 +0800</pubDate>
-      
-      <guid>https://vrcollab.com/posts/v0.10.0/</guid>
-      <description>In version v0.10.0, we have completely reiterated the design of the launcher, with a more focused workflow centred around stakeholder collaboration and data communication.
-Does your VRcollab Launcher look different? Don&amp;rsquo;t fret!
-Also introducing multi-language support, starting with our Mandarin Language support, with many other languages coming in the next few months.
-Multiuser Internet Coordination One key feature we are proud of is the ease at which the new launcher enables users to host or join coordination meetings with stakeholders from around the world in a couple of easy steps:</description>
     </item>
     
     <item>
